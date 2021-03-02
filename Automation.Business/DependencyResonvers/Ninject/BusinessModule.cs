@@ -22,7 +22,10 @@ namespace Automation.Business.DependencyResonvers.Ninject
             Bind<ICategoryManager>().To<CategoryManager>();
             Bind<ICategoryDal>().To<CategoryDal>();
 
-            
+            Bind<IProductManager>().To<ProductManager>();
+            Bind<IProductDal>().To<ProductDal>();
+
+
         }
     }
 }

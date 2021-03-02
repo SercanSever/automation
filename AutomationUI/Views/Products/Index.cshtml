@@ -1,0 +1,54 @@
+﻿@using AutomationUI.Models;
+@model ProductListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row mt-3 mb-5 border-bottom border-top">
+        <a class="btn btn-primary shadow" href="/Categories/AddCategory">Ürün Ekle</a>
+        <table class="table table-hover table-striped table-sm p-sm-1 mt-2 mb-5 shadow">
+            <tr>
+                <th>Ürün Adı</th>
+                <th>Kategori</th>
+                <th>Marka</th>
+                <th>Stok</th>
+                <th>Stok Durumu</th>
+                <th>Fiyat</th>
+                <th></th>
+                <th></th>
+            </tr>
+            @foreach (var product in Model.GetProductDetails)
+            {
+                <tr>
+                    <td class="p-2">@product.ProductName</td>
+                    <td class="p-2">@product.CategoryName</td>
+                    <td class="p-2">@product.Brand</td>
+                    <td class="p-2">@product.UnitInStock</td>
+                    <td class="p-2">@product.StockStatus</td>
+                    <td class="p-2">@product.UnitPrice</td>
+
+                    <td class="text-sm-right">
+                        <a class="btn btn-warning btn-sm mr-4" href="/Products/UpdateProduct/@product.ProductId">Güncelle</a>
+                    </td>
+                    @if (product.IsActive)
+                    {
+                        <td class="text-sm-left">
+                            <a class="btn btn-danger btn-sm text-center mr-4" href="/Products/DeleteProduct/@product.ProductId">Kaldır</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="text-sm-left">
+                            <a class="btn btn-primary btn-sm text-center mr-4" href="/Products/DeleteProduct/@product.ProductId">Ekle</a>
+                        </td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+

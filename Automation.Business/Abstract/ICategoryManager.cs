@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Automation.Business.Abstract
 {
@@ -13,5 +14,6 @@ namespace Automation.Business.Abstract
         Category GetById(int id);
         void Add(Category category);
         void Update(Category category);
+        List<SelectListItem> GetCategoriesListItems();
     }
 }
