@@ -1,0 +1,36 @@
+﻿@using AutomationUI.Models;
+@model CategoryListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row mt-3 mb-5 border-bottom border-top">
+        <a class="btn btn-primary shadow" href="/Categories/AddCategory">Kategori Ekle</a>
+        <table class="table table-hover table-dark p-sm-1 mt-2 mb-5 shadow">
+            <tr>
+                <th>Kategori Adı</th>
+                <th>Aktif/Pasif</th>
+                <th class="text-right">Güncelle</th>
+                <th class="text-center">Sil</th>
+
+            </tr>
+            @foreach (var category in Model.Categories)
+            {
+                <tr>
+                    <td>@category.CategoryName</td>
+                    <td>@category.IsActive</td>
+                    <td class="text-right">
+                        <a class="btn btn-warning btn-sm" href="#">Güncelle</a>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn btn-danger btn-sm text-center" href="#">Sil</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
