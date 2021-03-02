@@ -9,14 +9,14 @@
 <div class="container-fluid p-5">
     <h2>Kategori Ekle</h2>
     <div class="row p-2 shadow">
-        <form class="col-sm-4">
+        <form class="col-sm-4" method="post">
             <div class="form-group">
-                <label for="categoryName">Kategori Adı : </label>
-                <input type="email" class="form-control" id="categoryName" placeholder="Giyim, Sanat, Spor..">
+                @Html.Label("Kategori Adı : ")
+                @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
                 <small id="categoryNameValidation" class="form-text text-muted">Kategori adı 50 karakteri geçemez.</small>
             </div>
             <div class="form-check mb-2">
-                <input type="checkbox" class="form-check-input" id="checkIsActive">
+                @Html.CheckBoxFor(x => x.IsActive, new { @class = "form-check-input" })
                 <label class="form-check-label" for="checkIsActive">Aktif / Pasif</label>
             </div>
             <button type="submit" class="btn btn-primary">Kaydet</button>
