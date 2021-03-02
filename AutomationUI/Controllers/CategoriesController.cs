@@ -12,7 +12,6 @@ namespace AutomationUI.Controllers
     public class CategoriesController : Controller
     {
         ICategoryManager _categoryManager;
-
         public CategoriesController(ICategoryManager categoryManager)
         {
             _categoryManager = categoryManager;

@@ -42,7 +42,21 @@ namespace Automation.Business.Concrete
 
         public void Update(Product product)
         {
+            CheckStockStatus(product);
             _productDal.Update(product);
+        }
+
+        private void CheckStockStatus(Product product)
+        {
+            var model = _productDal.Get(x => x.ProductId == product.ProductId);
+            if (model.UnitInStock <= 2)
+            {
+                model.StockStatus = false;
+            }
+            else
+            {
+                model.StockStatus = true;
+            }
         }
     }
 }

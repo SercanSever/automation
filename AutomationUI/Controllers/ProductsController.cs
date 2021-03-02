@@ -52,9 +52,12 @@ namespace AutomationUI.Controllers
         [HttpGet]
         public ActionResult UpdateProduct(int id)
         {
+            var listItems = _categoryManager.GetCategoriesListItems();
+            ViewBag.listItems = listItems;
             var product = _productManager.GetById(id);
             return View("UpdateProduct", product);
         }
+        [HttpPost]
         public ActionResult UpdateProduct(Product product)
         {
             _productManager.Update(product);
