@@ -37,7 +37,7 @@ namespace AutomationUI.Controllers
             _categoryManager.Add(category);
             return RedirectToAction("Index");
         }
-        [HttpGet]
+        [HttpPost]
         public ActionResult DeleteCategory(int id)
         {
             var category = _categoryManager.GetById(id);

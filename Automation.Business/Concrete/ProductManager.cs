@@ -22,6 +22,7 @@ namespace Automation.Business.Concrete
 
         public void Add(Product product)
         {
+            CheckStockStatus(product);
             _productDal.Add(product);
         }
 
@@ -48,14 +49,13 @@ namespace Automation.Business.Concrete
 
         private void CheckStockStatus(Product product)
         {
-            var model = _productDal.Get(x => x.ProductId == product.ProductId);
-            if (model.UnitInStock <= 2)
+            if (product.UnitInStock <= 2)
             {
-                model.StockStatus = false;
+                product.StockStatus = false;
             }
             else
             {
-                model.StockStatus = true;
+                product.StockStatus = true;
             }
         }
     }

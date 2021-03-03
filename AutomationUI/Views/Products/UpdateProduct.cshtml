@@ -35,18 +35,14 @@
                     @Html.TextBoxFor(x => x.UnitInStock, new { @class = "form-control", @placeholder = "120.." })
                 </div>
                 <div class="form-group">
-                    @Html.Label("Resim : ")
-                    @Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control", @placeholder = "120.." })
-                </div>
-                <div class="form-check mb-2">
-                    @Html.CheckBoxFor(x => x.StockStatus, new { @class = "form-check-input" })
-                    <label class="form-check-label" for="checkIsActive">Stok</label>
+                    @Html.Label("Resin : ")
+                    @Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control", @placeholder = "360.." })
                 </div>
                 <div class="form-check mb-2">
                     @Html.CheckBoxFor(x => x.IsActive, new { @class = "form-check-input" })
                     <label class="form-check-label" for="checkIsActive">Aktif / Pasif</label>
                 </div>
-                <a class="btn btn-primary" href="/Products/Index">Güncelle</a>
+                <button type="submit" class="btn btn-primary">Güncelle</button>
             </div>
         </div>
     </div>
