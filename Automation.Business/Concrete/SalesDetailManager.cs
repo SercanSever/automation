@@ -33,6 +33,11 @@ namespace Automation.Business.Concrete
             return _salesDetailDal.Get(x => x.SalesDetailId == id);
         }
 
+        public List<SalesDetail> GetSalesByCustomerId(int id)
+        {
+            return _salesDetailDal.GetAll(x => x.CustomerId == id);
+        }
+
         public List<SalesDetail> GetSalesByEmployeeId(int id)
         {
             return _salesDetailDal.GetAll(x => x.EmployeeId == id);

@@ -23,6 +23,6 @@ namespace Automation.Entities.Concrete
         public bool IsActive { get; set; }
         public ICollection<SalesDetail> SalesDetails { get; set; }
         public int DepartmentId { get; set; }
-        public Department Department { get; set; }
+        public virtual Department Department { get; set; }
     }
 }

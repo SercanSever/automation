@@ -8,7 +8,10 @@
 
 @using (Html.BeginForm("UpdateCategory", "Categories", FormMethod.Post))
 {
-    <div class="container-fluid p-5">
+    <div class="container-fluid p-4">
+        <ol class="breadcrumb shadow">
+            <li class="breadcrumb-item lead"><strong>Kategori Güncelle</strong></li>
+        </ol>
         @Html.HiddenFor(x => x.CategoryId)
         <h2>Kategori Ekle</h2>
         <div class="row p-2 shadow ">

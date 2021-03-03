@@ -23,7 +23,7 @@ namespace Automation.Entities.Concrete
         public bool StockStatus { get; set; }
         public bool IsActive { get; set; }
         public int CategoryId { get; set; }
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
         public ICollection<SalesDetail> SalesDetails { get; set; }
     }
 }

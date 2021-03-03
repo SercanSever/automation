@@ -14,5 +14,6 @@ namespace Automation.Business.Abstract
         void Add(SalesDetail salesDetail);
         void Update(SalesDetail salesDetail);
         List<SalesDetail> GetSalesByEmployeeId(int id);
+        List<SalesDetail> GetSalesByCustomerId(int id);
     }
 }
