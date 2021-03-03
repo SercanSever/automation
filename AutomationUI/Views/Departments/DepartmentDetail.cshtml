@@ -1,0 +1,48 @@
+﻿@using AutomationUI.Models;
+@model EmployeeListViewModel
+@{
+    ViewBag.Title = "DepartmentDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row mt-3 mb-5 border-bottom border-top">
+        <a class="btn btn-primary shadow" href="/Categories/AddCategory">Kategori Ekle</a>
+        <table class="table table-hover table-striped table-sm p-sm-1 mt-2 mb-5 shadow">
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Resim</th>
+                <th></th>
+                <th>Personel Satışları</th>
+
+            </tr>
+            @foreach (var employee in Model.Employees)
+            {
+                <tr>
+                    <td class="p-2">@employee.EmployeeName</td>
+                    <td class="p-2">@employee.EmployeeSurname</td>
+                    <td class="p-2">@employee.EmployeeImage</td>
+                    <td class="p-2">@employee.IsActive</td>
+                    <td class="p-2"><a class="btn btn-primary" href="#">Satışlar</a></td>
+
+                    @if (employee.IsActive)
+                    {
+                        @*<td class="text-sm-left">
+                                <a class="btn btn-danger btn-sm text-center mr-4" href="/Categories/DeleteCategory/@employee.Id">Kaldır</a>
+                            </td>*@
+                    }
+                    else
+                    {
+                        @*<td class="text-sm-left">
+                                <a class="btn btn-primary btn-sm text-center mr-4" href="/Categories/DeleteCategory/@employee.CategoryId">Ekle</a>
+                            </td>*@
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+

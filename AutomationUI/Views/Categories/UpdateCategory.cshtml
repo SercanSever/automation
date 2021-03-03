@@ -18,11 +18,7 @@
                     @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
                     <small id="categoryNameValidation" class="form-text text-muted">Kategori adı 50 karakteri geçemez.</small>
                 </div>
-                <div class="form-check mb-2">
-                    @Html.CheckBoxFor(x => x.IsActive, new { @class = "form-check-input" })
-                    <label class="form-check-label" for="checkIsActive">Aktif / Pasif</label>
-                </div>
-                <a class="btn btn-primary" href="/Categories/Index">Güncelle</a>
+                <button type="submit" class="btn btn-primary">Güncelle</button>
             </div>
         </div>
     </div>

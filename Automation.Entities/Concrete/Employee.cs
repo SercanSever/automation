@@ -22,6 +22,7 @@ namespace Automation.Entities.Concrete
         public string EmployeeImage { get; set; }
         public bool IsActive { get; set; }
         public ICollection<SalesDetail> SalesDetails { get; set; }
+        public int DepartmentId { get; set; }
         public Department Department { get; set; }
     }
 }

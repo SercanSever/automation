@@ -77,9 +77,15 @@
   <ItemGroup>
     <Compile Include="Abstract\IAdminManager.cs" />
     <Compile Include="Abstract\ICategoryManager.cs" />
+    <Compile Include="Abstract\ICustomerManager.cs" />
+    <Compile Include="Abstract\IDepartmentManager.cs" />
+    <Compile Include="Abstract\IEmployeeManager.cs" />
     <Compile Include="Abstract\IProductManager.cs" />
     <Compile Include="Concrete\AdminManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
+    <Compile Include="Concrete\CustomerManager.cs" />
+    <Compile Include="Concrete\DepartmentManager.cs" />
+    <Compile Include="Concrete\EmployeeManager.cs" />
     <Compile Include="Concrete\ProductManager.cs" />
     <Compile Include="DependencyResonvers\Ninject\BusinessModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

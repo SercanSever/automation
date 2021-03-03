@@ -1,0 +1,28 @@
+﻿@using Automation.Entities.Concrete;
+@model Department
+@{
+    ViewBag.Title = "UpdateDepartment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("UpdateDepartment", "Departments", FormMethod.Post))
+{
+    <div class="container-fluid p-5">
+        @Html.HiddenFor(x => x.DepartmentId)
+        <h2>Kategori Ekle</h2>
+        <div class="row p-2 shadow ">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.Label("Departman Adı : ")
+                    @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
+                    <small id="categoryNameValidation" class="form-text text-muted">Departman adı 50 karakteri geçemez.</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Güncelle</button>
+            </div>
+        </div>
+    </div>
+}
+
+
+

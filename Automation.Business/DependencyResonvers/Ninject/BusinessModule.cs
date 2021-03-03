@@ -25,6 +25,14 @@ namespace Automation.Business.DependencyResonvers.Ninject
             Bind<IProductManager>().To<ProductManager>();
             Bind<IProductDal>().To<ProductDal>();
 
+            Bind<IDepartmentManager>().To<DepartmentManager>();
+            Bind<IDepartmentDal>().To<DepartmentDal>();
+
+            Bind<ICustomerManager>().To<CustomerManager>();
+            Bind<ICustomerDal>().To<CustomerDal>();
+
+            Bind<IEmployeeManager>().To<EmployeeManager>();
+            Bind<IEmployeeDal>().To<EmployeeDal>();
 
         }
     }

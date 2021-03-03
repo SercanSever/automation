@@ -1,0 +1,26 @@
+﻿@using Automation.Entities.Concrete;
+@model Department
+@{
+    ViewBag.Title = "AddDepartment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid p-5">
+    <h2>Departman Ekle</h2>
+    <div class="row p-2 shadow">
+        <form class="col-sm-4" method="post">
+            <div class="form-group">
+                @Html.Label("Departman Adı : ")
+                @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control", @placeholder = "" })
+                <small id="departmentNameValidation" class="form-text text-muted">Departman adı 50 karakteri geçemez.</small>
+            </div>
+            <div class="form-check mb-2">
+                @Html.CheckBoxFor(x => x.IsActive, new { @class = "form-check-input" })
+                <label class="form-check-label" for="checkIsActive">Aktif / Pasif</label>
+            </div>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </form>
+    </div>
+</div>
+

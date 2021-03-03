@@ -14,9 +14,9 @@
                 <th>Ürün Adı</th>
                 <th>Kategori</th>
                 <th>Marka</th>
-                <th>Stok</th>
-                <th>Stok Durumu</th>
                 <th>Fiyat</th>
+                <th>Stok</th>
+                <th class="text-center">Stok Durumu</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -26,9 +26,16 @@
                     <td class="p-2">@product.ProductName</td>
                     <td class="p-2">@product.CategoryName</td>
                     <td class="p-2">@product.Brand</td>
-                    <td class="p-2">@product.UnitInStock</td>
-                    <td class="p-2">@product.StockStatus</td>
                     <td class="p-2">@product.UnitPrice</td>
+                    <td class="p-2">@product.UnitInStock</td>
+                    @if (product.UnitInStock <= 5)
+                    {
+                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
+                    }
+                    else
+                    {
+                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
+                    }
 
                     <td class="text-sm-right">
                         <a class="btn btn-warning btn-sm mr-4" href="/Products/UpdateProduct/@product.ProductId">Güncelle</a>

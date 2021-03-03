@@ -1,0 +1,48 @@
+﻿@using AutomationUI.Models;
+@model DepartmentListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row mt-3 mb-5 border-bottom border-top">
+        <a class="btn btn-primary shadow" href="/Departments/AddDepartment">Departman Ekle</a>
+        <table class="table table-hover table-striped table-sm p-sm-1 mt-2 mb-5 shadow">
+            <tr>
+                <th>Departman Adı</th>
+                <th></th>
+                <th></th>
+                <th></th>
+
+
+            </tr>
+            @foreach (var department in Model.Departments)
+            {
+                <tr>
+                    <td class="p-2 col-sm-1">@department.DepartmentName</td>
+
+                    <td class="text-sm-right">
+                        <a class="btn btn-warning btn-sm mr-4" href="/Departments/UpdateDepartment/@department.DepartmentId">Güncelle</a>
+                    </td>
+                    @if (department.IsActive)
+                    {
+                        <td class="text-sm-left">
+                            <a class="btn btn-danger btn-sm text-center mr-4" href="/Departments/DeleteDepartment/@department.DepartmentId">Kaldır</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="text-sm-left">
+                            <a class="btn btn-primary btn-sm text-center mr-4" href="/Departments/DeleteDepartment/@department.DepartmentId">Ekle</a>
+                        </td>
+                    }
+                    <td class="text-sm-left">
+                        <a class="btn btn-success btn-sm text-center mr-4" href="/Departments/DepartmentDetail/@department.DepartmentId">Detay</a>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

@@ -134,11 +134,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CategoryListViewModel.cs" />
+    <Compile Include="Models\DepartmentListViewModel.cs" />
+    <Compile Include="Models\EmployeeListViewModel.cs" />
     <Compile Include="Models\ProductListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -152,6 +155,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Icons\greenCircle.png" />
+    <Content Include="Icons\redCircle.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -367,10 +372,14 @@
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\AddProduct.cshtml" />
     <Content Include="Views\Products\UpdateProduct.cshtml" />
+    <Content Include="Views\Departments\Index.cshtml" />
+    <Content Include="Views\Departments\AddDepartment.cshtml" />
+    <Content Include="Views\Departments\UpdateDepartment.cshtml" />
+    <Content Include="Views\Departments\DepartmentDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Departments\" />
+    <Folder Include="Views\Employees\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -385,6 +394,10 @@
     <ProjectReference Include="..\Automation.Core\Automation.Core.csproj">
       <Project>{cb2cd4aa-afef-4470-b7ec-a637b3946a4f}</Project>
       <Name>Automation.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Automation.DataAccess\Automation.DataAccess.csproj">
+      <Project>{f8447950-648c-4395-94d5-72baf0d05313}</Project>
+      <Name>Automation.DataAccess</Name>
     </ProjectReference>
     <ProjectReference Include="..\Automation.Entities\Automation.Entities.csproj">
       <Project>{92d35cf6-8161-4702-b06c-ec3c9f0a409c}</Project>
