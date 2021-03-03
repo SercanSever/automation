@@ -28,9 +28,9 @@ namespace Automation.Business.Concrete
             return _employeeDal.GetAll();
         }
 
-        public List<Employee> GetByDepartmentId(int id)
+        public List<Employee> GetDepartmentById(int id)
         {
-            return _employeeDal.GetAll(x=>x.DepartmentId == id);
+            return _employeeDal.GetAll(x => x.DepartmentId == id);
         }
 
         public Employee GetById(int id)
@@ -41,6 +41,11 @@ namespace Automation.Business.Concrete
         public void Update(Employee employee)
         {
             _employeeDal.Update(employee);
+        }
+
+        public string GetEmployeeNameById(int id)
+        {
+            return _employeeDal.GetAll(x => x.EmployeeId == id).Select(y => y.EmployeeName + " " + y.EmployeeSurname).FirstOrDefault();
         }
     }
 }

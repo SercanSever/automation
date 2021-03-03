@@ -143,6 +143,7 @@
     <Compile Include="Models\DepartmentListViewModel.cs" />
     <Compile Include="Models\EmployeeListViewModel.cs" />
     <Compile Include="Models\ProductListViewModel.cs" />
+    <Compile Include="Models\SalesDetailListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -376,6 +377,7 @@
     <Content Include="Views\Departments\AddDepartment.cshtml" />
     <Content Include="Views\Departments\UpdateDepartment.cshtml" />
     <Content Include="Views\Departments\DepartmentDetail.cshtml" />
+    <Content Include="Views\Departments\DepartmentEmployeeSales.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

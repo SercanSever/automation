@@ -13,11 +13,13 @@ namespace AutomationUI.Controllers
     {
         IDepartmentManager _departmentManager;
         IEmployeeManager _employeeManager;
+        ISalesDetailManager _salesDetailManager;
 
-        public DepartmentsController(IDepartmentManager departmentManager, IEmployeeManager employeeManager)
+        public DepartmentsController(IDepartmentManager departmentManager, IEmployeeManager employeeManager, ISalesDetailManager salesDetailManager)
         {
             _departmentManager = departmentManager;
             _employeeManager = employeeManager;
+            _salesDetailManager = salesDetailManager;
         }
 
         [HttpGet]
@@ -67,8 +69,21 @@ namespace AutomationUI.Controllers
         {
             var model = new EmployeeListViewModel
             {
-                Employees = _employeeManager.GetByDepartmentId(id)
+                Employees = _employeeManager.GetDepartmentById(id)
             };
+            var departmentName = _departmentManager.GetDepartmentNameById(id);
+            ViewBag.departmentName = departmentName;
+            return View(model);
+        }
+        [HttpGet]
+        public ActionResult DepartmentEmployeeSales(int id)
+        {
+            var model = new SalesDetailListViewModel
+            {
+                SalesDetails = _salesDetailManager.GetSalesByEmployeeId(id)
+            };
+            var employeeName = _employeeManager.GetEmployeeNameById(id);
+            ViewBag.employeeName = employeeName;
             return View(model);
         }
     }

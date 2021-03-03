@@ -13,6 +13,7 @@ namespace Automation.Business.Abstract
         Employee GetById(int id);
         void Add(Employee employee);
         void Update(Employee employee);
-        List<Employee> GetByDepartmentId(int id);
+        List<Employee> GetDepartmentById(int id);
+        string GetEmployeeNameById(int id);
     }
 }

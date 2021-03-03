@@ -1,0 +1,40 @@
+﻿@using AutomationUI.Models;
+@model SalesDetailListViewModel
+@{
+    ViewBag.Title = "DepartmentEmployeeSales";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb mt-3 shadow">
+        <li class="breadcrumb-item lead"><strong>@ViewBag.employeeName</strong></li>
+    </ol>
+    <div class="row mb-sm-5 border-bottom border-top">
+        <a class="btn btn-danger mr-sm-auto shadow" href="/Departments/AddDepartment">Yazdır</a>
+        <table class="table table-hover table-striped table-sm p-sm-1 mt-sm-1 mb-sm-4 shadow">
+            <tr>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>Resim</th>
+                <th>Tarih</th>
+                <th>Fiyat</th>
+                <th>Adet</th>
+                <th>Toplam</th>
+
+            </tr>
+            @foreach (var salesDetail in Model.SalesDetails)
+            {
+                <tr>
+                    <td class="p-2">@salesDetail.SalesDetailDate</td>
+                    <td class="p-2">@salesDetail.SalesDetailPrice</td>
+                    <td class="p-2">@salesDetail.SalesDetailQuantity</td>
+                    <td class="p-2">@salesDetail.SalesDetailTotal</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+
+
+

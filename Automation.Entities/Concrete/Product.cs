@@ -24,6 +24,6 @@ namespace Automation.Entities.Concrete
         public bool IsActive { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
-        //public ICollection<SalesDetail> SalesDetails { get; set; }
+        public ICollection<SalesDetail> SalesDetails { get; set; }
     }
 }

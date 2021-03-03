@@ -17,6 +17,7 @@ namespace Automation.Entities.Concrete
         public int InvoiceContentQuantity { get; set; }
         public int InvoiceContentUnitPrice { get; set; }
         public decimal InvoiceContentTotal { get; set; }
+        public int InvoiceId { get; set; }
         public Invoice Invoice { get; set; }
 
     }

@@ -32,6 +32,10 @@ namespace Automation.Business.Concrete
         {
             return _departmentDal.Get(x => x.DepartmentId == id);
         }
+        public string GetDepartmentNameById(int id)
+        {
+            return _departmentDal.GetAll(x => x.DepartmentId == id).Select(y => y.DepartmentName).FirstOrDefault();
+        }
 
         public void Update(Department department)
         {

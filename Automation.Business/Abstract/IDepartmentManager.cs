@@ -13,5 +13,6 @@ namespace Automation.Business.Abstract
         Department GetById(int id);
         void Add(Department department);
         void Update(Department department);
+        string GetDepartmentNameById(int id);
     }
 }
