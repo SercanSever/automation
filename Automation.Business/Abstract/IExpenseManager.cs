@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Automation.Business.Abstract
 {
-    public interface ICategoryManager
+    public interface IExpenseManager
     {
-        List<Category> GetAll();
-        Category GetById(int id);
-        void Add(Category category);
-        void Update(Category category);
+        List<Expense> GetAll();
+        Expense GetById(int id);
+        void Add(Expense expense);
+        void Update(Expense expense);
     }
 }

@@ -26,7 +26,7 @@ namespace AutomationUI.Controllers
             };
             return View(model);
         }
-        [HttpGet()]
+        [HttpGet]
         public ActionResult AddCategory()
         {
             return View();

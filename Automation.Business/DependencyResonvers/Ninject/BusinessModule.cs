@@ -37,6 +37,9 @@ namespace Automation.Business.DependencyResonvers.Ninject
             Bind<ISalesDetailManager>().To<SalesDetailManager>();
             Bind<ISalesDetailDal>().To<SalesDetailDal>();
 
+            Bind<IExpenseManager>().To<ExpenseManager>();
+            Bind<IExpenseDal>().To<ExpenseDal>();
+
         }
     }
 }

@@ -31,7 +31,7 @@ namespace AutomationUI.Controllers
         [HttpGet]
         public ActionResult AddProduct()
         {
-            var listItems = _categoryManager.GetCategoriesListItems();
+            var listItems = new CategoryListViewModel().GetCategoriesListItems();
             ViewBag.listItems = listItems;
             return View();
         }
@@ -52,7 +52,7 @@ namespace AutomationUI.Controllers
         [HttpGet]
         public ActionResult UpdateProduct(int id)
         {
-            var listItems = _categoryManager.GetCategoriesListItems();
+            var listItems = new CategoryListViewModel().GetCategoriesListItems();
             ViewBag.listItems = listItems;
             var product = _productManager.GetById(id);
             return View("UpdateProduct", product);

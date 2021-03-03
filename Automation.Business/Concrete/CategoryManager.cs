@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Web.Mvc;
 
 namespace Automation.Business.Concrete
 {
@@ -35,10 +34,6 @@ namespace Automation.Business.Concrete
         public void Update(Category category)
         {
             _categoryDal.Update(category);
-        }
-        public List<SelectListItem> GetCategoriesListItems()
-        {
-            return _categoryDal.GetCategoriesListItems();
         }
     }
 }
