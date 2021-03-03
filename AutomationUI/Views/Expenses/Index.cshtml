@@ -1,0 +1,62 @@
+﻿@using AutomationUI.Models
+@model ExpenseListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb mt-3 shadow">
+        <li class="breadcrumb-item lead"><strong>Personeller</strong></li>
+    </ol>
+    <div class="row mt-3 mb-5 border-bottom border-top">
+        @*<a class="btn btn-primary shadow" href="/Employees/AddEmployee">Perosnel Ekle</a>*@
+        <table class="table table-hover table-bordered table-sm p-sm-1 mt-2 mb-5 shadow">
+            <tr>
+                <th>Açıklama</th>
+                <th>Tarih</th>
+                <th>Toplam</th>
+                <th></th>
+                <th></th>
+
+
+            </tr>
+            @foreach (var expense in Model.Expenses)
+            {
+                <tr>
+                    <td class="p-2">@expense.ExpenseDescription</td>
+                    <td class="p-2">@expense.ExpenseDate</td>
+                    <td></td>
+                    @*@if (!expense.IsActive)
+                    {
+                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
+                    }
+                    else
+                    {
+                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
+                    }*@
+                    <td class="text-sm-right">
+                        <a class="btn btn-success btn-sm text-sm-right" href="/Departments/DepartmentEmployeeSales/@expense.ExpenseId">Detay</a>
+                    </td>
+                    <td class="text-sm-right">
+                        <a class="btn btn-warning btn-sm mr-sm-2" href="/Employees/UpdateEmployee/@expense.ExpenseId">Güncelle</a>
+                    </td>
+                    @if (expense.IsActive)
+                    {
+                        <td class="text-sm-left">
+                            <a class="btn btn-danger btn-sm text-center" href="/Employees/DeleteEmployee/@expense.ExpenseId">Kaldır</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="text-sm-left">
+                            <a class="btn btn-primary btn-sm text-center" href="/Employees/DeleteEmployee/@expense.ExpenseId">Ekle</a>
+                        </td>
+                    }
+                </tr>
+            }
+        </table>
+    </div>
+</div>
+

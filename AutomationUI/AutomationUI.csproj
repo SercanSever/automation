@@ -138,6 +138,7 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ExpensesController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Controllers\SalesDetailsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -389,10 +390,13 @@
     <Content Include="Views\Employees\Index.cshtml" />
     <Content Include="Views\Employees\AddEmployee.cshtml" />
     <Content Include="Views\Employees\UpdateEmployee.cshtml" />
+    <Content Include="Views\Expenses\Index.cshtml" />
+    <Content Include="Views\SalesDetails\Index.cshtml" />
+    <Content Include="Views\SalesDetails\AddSalesDetail.cshtml" />
+    <Content Include="Views\SalesDetails\UpdateSalesDetail.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Expenses\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

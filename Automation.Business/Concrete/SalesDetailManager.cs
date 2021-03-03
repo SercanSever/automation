@@ -20,6 +20,8 @@ namespace Automation.Business.Concrete
 
         public void Add(SalesDetail salesDetail)
         {
+            SalasDetailDate(salesDetail);
+            MultiplyQuantityAndPrice(salesDetail);
             _salesDetailDal.Add(salesDetail);
         }
 
@@ -45,7 +47,17 @@ namespace Automation.Business.Concrete
 
         public void Update(SalesDetail salesDetail)
         {
+            SalasDetailDate(salesDetail);
+            MultiplyQuantityAndPrice(salesDetail);
             _salesDetailDal.Update(salesDetail);
+        }
+        private void MultiplyQuantityAndPrice(SalesDetail salesDetail)
+        {
+            salesDetail.SalesDetailTotal = salesDetail.SalesDetailPrice * salesDetail.SalesDetailQuantity;
+        }
+        private void SalasDetailDate(SalesDetail salesDetail)
+        {
+            salesDetail.SalesDetailDate = DateTime.Now;
         }
     }
 }

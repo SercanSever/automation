@@ -1,0 +1,44 @@
+﻿@using Automation.Entities.Concrete;
+@model SalesDetail
+@{
+    ViewBag.Title = "AddSalesDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid p-4">
+    <ol class="breadcrumb shadow">
+        <li class="breadcrumb-item lead"><strong>Satış Ekle</strong></li>
+    </ol>
+    <div class="row p-2 shadow">
+        <form class="col-sm-4" method="post">
+            <div class="form-group">
+                @Html.Label("Marka Seçiniz : ")
+                @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.brandListItems, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Ürün Seçiniz : ")
+                @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.productListItems, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Personel Seçiniz : ")
+                @Html.DropDownListFor(x => x.EmployeeId, (List<SelectListItem>)ViewBag.employeeListItems, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Müşteri Seçiniz : ")
+                @Html.DropDownListFor(x => x.CustomerId, (List<SelectListItem>)ViewBag.customerListItems, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Ürün Sayısını Giriniz : ")
+                @Html.TextBoxFor(x => x.SalesDetailQuantity, new { @class = "form-control", @placeholder = "" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Fiyat : ")
+                @Html.TextBoxFor(x => x.SalesDetailPrice, new { @class = "form-control", @placeholder = "₺" })
+            </div>
+            <button type="submit" class="btn btn-primary">Satış Yap</button>
+        </form>
+    </div>
+</div>
+
+

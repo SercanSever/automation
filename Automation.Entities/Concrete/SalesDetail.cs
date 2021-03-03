@@ -21,6 +21,5 @@ namespace Automation.Entities.Concrete
         public virtual Customer Customer { get; set; }
         public int EmployeeId { get; set; }
         public virtual Employee Employee { get; set; }
-
     }
 }
