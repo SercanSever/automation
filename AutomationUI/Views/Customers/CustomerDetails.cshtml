@@ -12,47 +12,60 @@
     </ol>
     <div class="row mb-sm-5 border-bottom border-top">
         <a class="btn btn-danger mr-sm-auto shadow" href="/Departments/AddDepartment">Yazdır</a>
-        <table class="table table-hover table-striped table-sm p-sm-1 mt-sm-1 mb-sm-5 shadow">
-            <tr>
-                <th>Müşteri</th>
-                <th>Ürün</th>
-                <th>Personel</th>
-                <th>Fiyat</th>
-                <th>Adet</th>
-                <th>Toplam</th>
-                <th>Tarih</th>
-
-            </tr>
-            @foreach (var customer in Model.SalesDetails)
-            {
+        <table id="customerDetailsTable" class="table table-hover table-striped table-sm p-sm-1 mt-sm-1 mb-sm-5 shadow">
+            <thead>
                 <tr>
-                    <td class="p-2">@customer.Customer.CustomerName @customer.Customer.CustomerSurname</td>
-                    <td class="p-2">@customer.Product.ProductName</td>
-                    <td class="p-2">@customer.Employee.EmployeeName @customer.Employee.EmployeeSurname</td>
-                    <td class="p-2">@customer.SalesDetailPrice</td>
-                    <td class="p-2">@customer.SalesDetailQuantity</td>
-                    <td class="p-2">@customer.SalesDetailTotal</td>
-                    <td class="p-2">@customer.SalesDetailDate</td>
-                    @*<td class="text-sm-left">
-                            <a class="btn btn-success btn-sm text-center mr-4" href="/Departments/DepartmentEmployeeSales/@customer.DepartmentId">Detay</a>
-                        </td>*@
-                    @*@if (customer.IsActive)
-                        {
-                            <td class="text-sm-left">
-                                    <a class="btn btn-danger btn-sm text-center mr-4" href="/Categories/DeleteCategory/@employee.Id">Kaldır</a>
-                                </td>
-                        }
-                        else
-                        {
-                            <td class="text-sm-left">
-                                    <a class="btn btn-primary btn-sm text-center mr-4" href="/Categories/DeleteCategory/@employee.CategoryId">Ekle</a>
-                                </td>
-                        }*@
+                    <th>Müşteri</th>
+                    <th>Ürün</th>
+                    <th>Personel</th>
+                    <th>Fiyat</th>
+                    <th>Adet</th>
+                    <th>Toplam</th>
+                    <th>Tarih</th>
                 </tr>
-            }
+            </thead>
+
+            <tbody>
+                @foreach (var customer in Model.SalesDetails)
+                {
+                    <tr>
+                        <td class="p-2">@customer.Customer.CustomerName @customer.Customer.CustomerSurname</td>
+                        <td class="p-2">@customer.Product.ProductName</td>
+                        <td class="p-2">@customer.Employee.EmployeeName @customer.Employee.EmployeeSurname</td>
+                        <td class="p-2">@customer.SalesDetailPrice</td>
+                        <td class="p-2">@customer.SalesDetailQuantity</td>
+                        <td class="p-2">@customer.SalesDetailTotal</td>
+                        <td class="p-2">@customer.SalesDetailDate</td>
+                        @*<td class="text-sm-left">
+                                <a class="btn btn-success btn-sm text-center mr-4" href="/Departments/DepartmentEmployeeSales/@customer.DepartmentId">Detay</a>
+                            </td>*@
+                        @*@if (customer.IsActive)
+                            {
+                                <td class="text-sm-left">
+                                        <a class="btn btn-danger btn-sm text-center mr-4" href="/Categories/DeleteCategory/@employee.Id">Kaldır</a>
+                                    </td>
+                            }
+                            else
+                            {
+                                <td class="text-sm-left">
+                                        <a class="btn btn-primary btn-sm text-center mr-4" href="/Categories/DeleteCategory/@employee.CategoryId">Ekle</a>
+                                    </td>
+                            }*@
+                    </tr>
+                }
+            </tbody>
+
         </table>
     </div>
 </div>
+@Html.Partial("_Datatable")
+<script>
+    $('#customerDetailsTable').DataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+        }
+    });
+</script>
 
 
 

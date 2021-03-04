@@ -11,52 +11,65 @@
     </ol>
     <div class="row mt-3 mb-5 border-bottom border-top">
         <a class="btn btn-primary shadow" href="/Customers/AddCustomer">Müşteri Ekle</a>
-        <table class="table table-hover table-striped table-sm p-sm-1 mt-2 mb-5 shadow">
-            <tr>
-                <th>Adı</th>
-                <th>Email</th>
-                <th>Şehir</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            @foreach (var customer in Model.Customers)
-            {
+        <table id="customerTable" class="table table-hover table-striped table-sm p-sm-1 mt-2 mb-5 shadow">
+            <thead>
                 <tr>
-                    <td class="p-2">@customer.CustomerName @customer.CustomerSurname</td>
-                    <td class="p-2">@customer.CustomerEmail</td>
-                    <td class="p-2">@customer.CustomerCity</td>
-                    @if (!customer.IsActive)
-                    {
-                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
-                    }
-                    else
-                    {
-                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
-                    }
-                    <td class="text-sm-right">
-                        <a class="btn btn-success btn-sm " href="/Customers/CustomerDetails/@customer.CustomerId">Detay</a>
-                    </td>
-
-                    <td class="text-sm-right">
-                        <a class="btn btn-warning btn-sm ml-auto" href="/Customers/UpdateCustomer/@customer.CustomerId">Güncelle</a>
-                    </td>
-                    @if (customer.IsActive)
-                    {
-                        <td class="text-sm-left">
-                            <a class="btn btn-danger btn-sm text-center ml-sm-auto" href="/Customers/DeleteCustomer/@customer.CustomerId">Kaldır</a>
-                        </td>
-                    }
-                    else
-                    {
-                        <td class="text-sm-left">
-                            <a class="btn btn-primary btn-sm text-center ml-sm-auto" href="/Customers/DeleteCustomer/@customer.CustomerId">Ekle</a>
-                        </td>
-                    }
+                    <th>Adı</th>
+                    <th>Email</th>
+                    <th>Şehir</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                 </tr>
-            }
+            </thead>
+            <tbody>
+                @foreach (var customer in Model.Customers)
+                {
+                    <tr>
+                        <td class="p-2">@customer.CustomerName @customer.CustomerSurname</td>
+                        <td class="p-2">@customer.CustomerEmail</td>
+                        <td class="p-2">@customer.CustomerCity</td>
+                        @if (!customer.IsActive)
+                        {
+                            <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
+                        }
+                        else
+                        {
+                            <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
+                        }
+                        <td class="text-sm-right">
+                            <a class="btn btn-success btn-sm " href="/Customers/CustomerDetails/@customer.CustomerId">Detay</a>
+                        </td>
+
+                        <td class="text-sm-right">
+                            <a class="btn btn-warning btn-sm ml-auto" href="/Customers/UpdateCustomer/@customer.CustomerId">Güncelle</a>
+                        </td>
+                        @if (customer.IsActive)
+                        {
+                            <td class="text-sm-left">
+                                <a class="btn btn-danger btn-sm text-center ml-sm-auto" href="/Customers/DeleteCustomer/@customer.CustomerId">Kaldır</a>
+                            </td>
+                        }
+                        else
+                        {
+                            <td class="text-sm-left">
+                                <a class="btn btn-primary btn-sm text-center ml-sm-auto" href="/Customers/DeleteCustomer/@customer.CustomerId">Ekle</a>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
         </table>
     </div>
 </div>
+@Html.Partial("_Datatable")
+<script>
+    $('#customerTable').DataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+        }
+    });
+</script>
+
 

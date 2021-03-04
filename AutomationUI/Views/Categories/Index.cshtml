@@ -12,44 +12,56 @@
     </ol>
     <div class="row mt-3 mb-5 border-bottom border-top">
         <a class="btn btn-primary shadow" href="/Categories/AddCategory">Kategori Ekle</a>
-        <table class="table table-hover table-striped table-sm p-sm-1 mt-2 mb-5 shadow">
-            <tr>
-                <th>Kategori Adı</th>
-                <th></th>
-                <th></th>
-
-
-            </tr>
-            @foreach (var category in Model.Categories)
-            {
+        <table id="categoryTable" class="table table-hover table-striped table-sm p-sm-1 mt-2 mb-5 shadow">
+            <thead>
                 <tr>
-                    <td class="p-2 col-sm-1">@category.CategoryName</td>
-                    @if (!category.IsActive)
-                    {
-                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
-                    }
-                    else
-                    {
-                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
-                    }
-                    <td class="text-sm-right">
-                        <a class="btn btn-warning btn-sm mr-4" href="/Categories/UpdateCategory/@category.CategoryId">Güncelle</a>
-                    </td>
-                    @if (category.IsActive)
-                    {
-                        <td class="text-sm-left">
-                            <a class="btn btn-danger btn-sm text-center mr-4" href="/Categories/DeleteCategory/@category.CategoryId">Kaldır</a>
-                        </td>
-                    }
-                    else
-                    {
-                        <td class="text-sm-left">
-                            <a class="btn btn-primary btn-sm text-center mr-4" href="/Categories/DeleteCategory/@category.CategoryId">Ekle</a>
-                        </td>
-                    }
+                    <th>Kategori Adı</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
                 </tr>
-            }
+            </thead>
+            <tbody>
+                @foreach (var category in Model.Categories)
+                {
+                    <tr>
+                        <td class="p-2 col-sm-1">@category.CategoryName</td>
+                        @if (!category.IsActive)
+                        {
+                            <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
+                        }
+                        else
+                        {
+                            <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
+                        }
+                        <td class="text-sm-right">
+                            <a class="btn btn-warning btn-sm mr-4" href="/Categories/UpdateCategory/@category.CategoryId">Güncelle</a>
+                        </td>
+                        @if (category.IsActive)
+                        {
+                            <td class="text-sm-left">
+                                <a class="btn btn-danger btn-sm text-center mr-4" href="/Categories/DeleteCategory/@category.CategoryId">Kaldır</a>
+                            </td>
+                        }
+                        else
+                        {
+                            <td class="text-sm-left">
+                                <a class="btn btn-primary btn-sm text-center mr-4" href="/Categories/DeleteCategory/@category.CategoryId">Ekle</a>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
         </table>
     </div>
 </div>
+@Html.Partial("_Datatable")
+<script>
+    $('#categoryTable').DataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+        }
+    });
+</script>
+
 

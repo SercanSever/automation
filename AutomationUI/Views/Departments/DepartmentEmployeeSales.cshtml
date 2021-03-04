@@ -12,32 +12,46 @@
     </ol>
     <div class="row mb-sm-5 border-bottom border-top">
         <a class="btn btn-danger mr-sm-auto shadow" href="/Departments/AddDepartment">Yazdır</a>
-        <table class="table table-hover table-striped table-sm p-sm-1 mt-sm-1 mb-sm-4 shadow">
-            <tr>
-                <th>Ad</th>
-                <th>Marka</th>
-                <th>Ürün</th>
-                <th>Tarih</th>
-                <th>Fiyat</th>
-                <th>Adet</th>
-                <th>Toplam</th>
-
-            </tr>
-            @foreach (var salesDetail in Model.SalesDetails)
-            {
+        <table id="departmentEmployeeSales" class="table table-hover table-striped table-sm p-sm-1 mt-sm-1 mb-sm-4 shadow">
+            <thead>
                 <tr>
-                    <td class="p-2">@salesDetail.Employee.EmployeeName @salesDetail.Employee.EmployeeSurname</td>
-                    <td class="p-2">@salesDetail.Product.Brand</td>
-                    <td class="p-2">@salesDetail.Product.ProductName</td>
-                    <td class="p-2">@salesDetail.SalesDetailDate</td>
-                    <td class="p-2">@salesDetail.SalesDetailPrice</td>
-                    <td class="p-2">@salesDetail.SalesDetailQuantity</td>
-                    <td class="p-2">@salesDetail.SalesDetailTotal</td>
+                    <th>Ad</th>
+                    <th>Marka</th>
+                    <th>Ürün</th>
+                    <th>Tarih</th>
+                    <th>Fiyat</th>
+                    <th>Adet</th>
+                    <th>Toplam</th>
                 </tr>
-            }
+            </thead>
+
+            <tbody>
+                @foreach (var salesDetail in Model.SalesDetails)
+                {
+                    <tr>
+                        <td class="p-2">@salesDetail.Employee.EmployeeName @salesDetail.Employee.EmployeeSurname</td>
+                        <td class="p-2">@salesDetail.Product.Brand</td>
+                        <td class="p-2">@salesDetail.Product.ProductName</td>
+                        <td class="p-2">@salesDetail.SalesDetailDate</td>
+                        <td class="p-2">@salesDetail.SalesDetailPrice</td>
+                        <td class="p-2">@salesDetail.SalesDetailQuantity</td>
+                        <td class="p-2">@salesDetail.SalesDetailTotal</td>
+                    </tr>
+                }
+            </tbody>
+
         </table>
     </div>
 </div>
+@Html.Partial("_Datatable")
+<script>
+    $('#departmentEmployeeSales').DataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+        }
+    });
+</script>
+
 
 
 

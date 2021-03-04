@@ -11,41 +11,55 @@
         <li class="breadcrumb-item lead"><strong>@ViewBag.departmentName</strong></li>
     </ol>
     <div class="row mb-sm-5 border-bottom border-top">
-        <table class="table table-hover table-striped table-sm p-sm-1 mt-sm-4 mb-sm-4 shadow">
-            <tr>
-                <th>Ad</th>
-                <th>Soyad</th>
-                <th>Resim</th>
-                <th></th>
-                <th>Personel Satışları</th>
-
-            </tr>
-            @foreach (var employee in Model.Employees)
-            {
+        <table id="departmentDetail" class="table table-hover table-striped table-sm p-sm-1 mt-sm-4 mb-sm-4 shadow">
+            <thead>
                 <tr>
-                    <td class="p-2">@employee.EmployeeName</td>
-                    <td class="p-2">@employee.EmployeeSurname</td>
-                    <td class="p-2">@employee.EmployeeImage</td>
-                    <td class="p-2">@employee.IsActive</td>
-                    <td class="text-sm-left">
-                        <a class="btn btn-success btn-sm text-center mr-4" href="/Departments/DepartmentEmployeeSales/@employee.DepartmentId">Detay</a>
-                    </td>
-                    @if (employee.IsActive)
-                    {
-                        @*<td class="text-sm-left">
-                                <a class="btn btn-danger btn-sm text-center mr-4" href="/Categories/DeleteCategory/@employee.Id">Kaldır</a>
-                            </td>*@
-                    }
-                    else
-                    {
-                        @*<td class="text-sm-left">
-                                <a class="btn btn-primary btn-sm text-center mr-4" href="/Categories/DeleteCategory/@employee.CategoryId">Ekle</a>
-                            </td>*@
-                    }
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Resim</th>
+                    <th></th>
+                    <th>Personel Satışları</th>
                 </tr>
-            }
+            </thead>
+            <tbody>
+                @foreach (var employee in Model.Employees)
+                {
+                    <tr>
+                        <td class="p-2">@employee.EmployeeName</td>
+                        <td class="p-2">@employee.EmployeeSurname</td>
+                        <td class="p-2">@employee.EmployeeImage</td>
+                        <td class="p-2">@employee.IsActive</td>
+                        <td class="text-sm-left">
+                            <a class="btn btn-success btn-sm text-center mr-4" href="/Departments/DepartmentEmployeeSales/@employee.DepartmentId">Detay</a>
+                        </td>
+                        @if (employee.IsActive)
+                        {
+                            @*<td class="text-sm-left">
+                                    <a class="btn btn-danger btn-sm text-center mr-4" href="/Categories/DeleteCategory/@employee.Id">Kaldır</a>
+                                </td>*@
+                        }
+                        else
+                        {
+                            @*<td class="text-sm-left">
+                                    <a class="btn btn-primary btn-sm text-center mr-4" href="/Categories/DeleteCategory/@employee.CategoryId">Ekle</a>
+                                </td>*@
+                        }
+                    </tr>
+                }
+            </tbody>
         </table>
     </div>
 </div>
+@Html.Partial("_Datatable")
+<script>
+    $('#departmentDetail').DataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+        }
+    });
+</script>
+
+
+
 
 
