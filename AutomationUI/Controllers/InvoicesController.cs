@@ -9,11 +9,11 @@ using System.Web.Mvc;
 
 namespace AutomationUI.Controllers
 {
-    public class InviocesController : Controller
+    public class InvoicesController : Controller
     {
         private IInvoiceManager _invoiceManager;
 
-        public InviocesController(IInvoiceManager invoiceManager)
+        public InvoicesController(IInvoiceManager invoiceManager)
         {
             _invoiceManager = invoiceManager;
         }

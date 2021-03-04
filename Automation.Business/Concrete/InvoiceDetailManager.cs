@@ -33,6 +33,11 @@ namespace Automation.Business.Concrete
             return _invoiceDetailDal.Get(x => x.InvoiceContentId == id);
         }
 
+        public List<InvoiceDetail> GetInvoiceDetailsByInvoiceId(int id)
+        {
+            return _invoiceDetailDal.GetAll(x => x.InvoiceId == id);
+        }
+
         public void Update(InvoiceDetail invoiceDetail)
         {
             _invoiceDetailDal.Update(invoiceDetail);

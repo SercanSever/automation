@@ -22,7 +22,7 @@
                     <th>Teslim Alan</th>
                     <th>Açıklama</th>
                     <th>Toplam Tutar</th>
-                    <th></th>
+                    <th>Detay</th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -37,7 +37,6 @@
                         <td class="p-2">@invoice.InvoiceHour</td>
                         <td class="p-2">@invoice.InvoiceDeliverer</td>
                         <td class="p-2">@invoice.InvoiceReceiver</td>
-                        <td class="p-2">@invoice.InvoiceDetails</td>
                         @if (!invoice.IsActive)
                         {
                             <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
@@ -47,21 +46,21 @@
                             <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
                         }
 
-                        <td></td>
+                        <td><a class="btn btn-warning btn-sm mr-4" href="/InvoiceDetails/Index/@invoice.InvoiceId">Detay</a></td>
 
                         <td class="text-sm-right">
-                            <a class="btn btn-warning btn-sm mr-4" href="/Invoices/UpdateInvoices/@invoice.InvoiceId">Güncelle</a>
+                            <a class="btn btn-warning btn-sm mr-4" href="/Invoices/UpdateInvoice/@invoice.InvoiceId">Güncelle</a>
                         </td>
                         @if (invoice.IsActive)
                         {
                             <td class="text-sm-left">
-                                <a class="btn btn-danger btn-sm text-center mr-4" href="/Invoices/DeleteInvoices/@invoice.InvoiceId">Kaldır</a>
+                                <a class="btn btn-danger btn-sm text-center mr-4" href="/Invoices/DeleteInvoice/@invoice.InvoiceId">Kaldır</a>
                             </td>
                         }
                         else
                         {
                             <td class="text-sm-left">
-                                <a class="btn btn-primary btn-sm text-center mr-4" href="/Invoices/DeleteInvoices/@invoice.InvoiceId">Ekle</a>
+                                <a class="btn btn-primary btn-sm text-center mr-4" href="/Invoices/DeleteInvoice/@invoice.InvoiceId">Ekle</a>
                             </td>
                         }
                     </tr>

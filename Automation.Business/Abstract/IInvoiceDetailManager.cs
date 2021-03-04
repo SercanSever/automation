@@ -13,5 +13,6 @@ namespace Automation.Business.Abstract
         InvoiceDetail GetById(int id);
         void Add(InvoiceDetail invoiceDetail);
         void Update(InvoiceDetail invoiceDetail);
+        List<InvoiceDetail> GetInvoiceDetailsByInvoiceId(int id);
     }
 }

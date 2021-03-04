@@ -1,0 +1,32 @@
+﻿@using Automation.Entities.Concrete;
+@model InvoiceDetail
+@{
+    ViewBag.Title = "UpdateInvoiceDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+@using (Html.BeginForm("UpdateInvoiceDetail", "InvoiceDetails", FormMethod.Post))
+{
+    <div class="container-fluid p-4">
+        <ol class="breadcrumb shadow">
+            <li class="breadcrumb-item lead"><strong>Açıklama Ekle</strong></li>
+        </ol>
+        @Html.HiddenFor(x => x.InvoiceContentId)
+        <div class="row p-2 shadow ">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.Label("Fatura Açıklaması : ")
+                    @Html.TextAreaFor(x => x.InvoiceContentDescription, new { @class = "form-control", @placeholder = "Açıklama yaz.." })
+                    <small id="categoryNameValidation" class="form-text text-muted">Departman adı 50 karakteri geçemez.</small>
+                </div>
+                <button type="submit" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+}
+
+
+

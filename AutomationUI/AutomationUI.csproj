@@ -132,12 +132,13 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BoardsController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\CustomersController.cs" />
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ExpensesController.cs" />
-    <Compile Include="Controllers\InviocesController.cs" />
+    <Compile Include="Controllers\InvoicesController.cs" />
     <Compile Include="Controllers\InvoiceDetailsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\SalesDetailsController.cs" />
@@ -640,6 +641,9 @@
     <Content Include="Views\Invioces\Index.cshtml" />
     <Content Include="Views\InvoiceDetails\Index.cshtml" />
     <Content Include="Views\Invioces\AddInvoice.cshtml" />
+    <Content Include="Views\Invioces\UpdateInvoice.cshtml" />
+    <Content Include="Views\InvoiceDetails\UpdateInvoiceDetail.cshtml" />
+    <Content Include="Views\Boards\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

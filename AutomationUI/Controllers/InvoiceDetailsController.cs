@@ -19,11 +19,11 @@ namespace AutomationUI.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(int id)
         {
             var model = new InvoiceDetailListViewModel
             {
-                InvoiceDetails = _invoiceDetailManager.GetAll()
+                InvoiceDetails = _invoiceDetailManager.GetInvoiceDetailsByInvoiceId(id)
             };
             return View(model);
         }
