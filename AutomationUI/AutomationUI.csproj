@@ -137,6 +137,8 @@
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ExpensesController.cs" />
+    <Compile Include="Controllers\InviocesController.cs" />
+    <Compile Include="Controllers\InvoiceDetailsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\SalesDetailsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -147,6 +149,8 @@
     <Compile Include="Models\DepartmentListViewModel.cs" />
     <Compile Include="Models\EmployeeListViewModel.cs" />
     <Compile Include="Models\ExpenseListViewModel.cs" />
+    <Compile Include="Models\InvoiceDetailListViewModel.cs" />
+    <Compile Include="Models\InvoiceListViewModel.cs" />
     <Compile Include="Models\ProductListViewModel.cs" />
     <Compile Include="Models\SalesDetailListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -631,6 +635,11 @@
     <Content Include="Views\SalesDetails\AddSalesDetail.cshtml" />
     <Content Include="Views\SalesDetails\UpdateSalesDetail.cshtml" />
     <Content Include="Views\Shared\_Datatable.cshtml" />
+    <Content Include="Views\Products\WriteProductListToPdf.cshtml" />
+    <Content Include="Views\Shared\_DatatableXl.cshtml" />
+    <Content Include="Views\Invioces\Index.cshtml" />
+    <Content Include="Views\InvoiceDetails\Index.cshtml" />
+    <Content Include="Views\Invioces\AddInvoice.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

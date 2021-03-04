@@ -19,7 +19,9 @@ namespace Automation.Entities.Concrete
         [StringLength(50)]
         public string InvoiceOrder { get; set; }
         public DateTime InvoiceDate { get; set; }
-        public DateTime InvoiceHour { get; set; }
+        [Column(TypeName = "char")]
+        [StringLength(5)]
+        public string InvoiceHour { get; set; }
         [Column(TypeName = "NVarChar")]
         [StringLength(50)]
         public string InvoiceDeliverer { get; set; }
@@ -27,6 +29,7 @@ namespace Automation.Entities.Concrete
         [StringLength(50)]
         public string InvoiceReceiver { get; set; }
         public bool IsActive { get; set; }
+        public decimal TotalPrice { get; set; }
         public ICollection<InvoiceDetail> InvoiceDetails { get; set; }
     }
 }

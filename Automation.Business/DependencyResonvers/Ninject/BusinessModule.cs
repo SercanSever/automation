@@ -40,6 +40,12 @@ namespace Automation.Business.DependencyResonvers.Ninject
             Bind<IExpenseManager>().To<ExpenseManager>();
             Bind<IExpenseDal>().To<ExpenseDal>();
 
+            Bind<IInvoiceManager>().To<InvoiceManager>();
+            Bind<IInvoiceDal>().To<InvoiceDal>();
+
+            Bind<IInvoiceDetailManager>().To<InvoiceDetailManager>();
+            Bind<IInvoiceDetailDal>().To<InvoiceDetailDal>();
+
         }
     }
 }

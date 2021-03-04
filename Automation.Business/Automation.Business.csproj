@@ -81,6 +81,8 @@
     <Compile Include="Abstract\IDepartmentManager.cs" />
     <Compile Include="Abstract\IEmployeeManager.cs" />
     <Compile Include="Abstract\IExpenseManager.cs" />
+    <Compile Include="Abstract\IInvoiceDetailManager.cs" />
+    <Compile Include="Abstract\IInvoiceManager.cs" />
     <Compile Include="Abstract\IProductManager.cs" />
     <Compile Include="Abstract\ISalesDetailManager.cs" />
     <Compile Include="Concrete\AdminManager.cs" />
@@ -89,6 +91,8 @@
     <Compile Include="Concrete\DepartmentManager.cs" />
     <Compile Include="Concrete\EmployeeManager.cs" />
     <Compile Include="Concrete\ExpenseManager.cs" />
+    <Compile Include="Concrete\InvoiceDetailManager.cs" />
+    <Compile Include="Concrete\InvoiceManager.cs" />
     <Compile Include="Concrete\ProductManager.cs" />
     <Compile Include="Concrete\SalesDetailManager.cs" />
     <Compile Include="DependencyResonvers\Ninject\BusinessModule.cs" />

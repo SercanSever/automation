@@ -63,5 +63,14 @@ namespace AutomationUI.Controllers
             _productManager.Update(product);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult WriteProductListToPdf()
+        {
+            var model = new ProductListViewModel
+            {
+                Products = _productManager.GetAll()
+            };
+            return View(model);
+        }
     }
 }

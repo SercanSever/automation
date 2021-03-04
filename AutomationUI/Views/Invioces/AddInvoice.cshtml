@@ -1,0 +1,47 @@
+﻿@using Automation.Entities.Concrete
+@model Invoice
+@{
+    ViewBag.Title = "AddInvoice";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid p-4">
+    <ol class="breadcrumb shadow">
+        <li class="breadcrumb-item lead"><strong>Fatura Ekle</strong></li>
+    </ol>
+    <div class="row p-2 shadow">
+        <form class="col-sm-4" method="post">
+            <div class="form-group">
+                @Html.Label("Seri No : ")
+                @Html.TextBoxFor(x => x.InvoiceSerial, new { @class = "form-control", @placeholder = "" })
+                <small id="departmentNameValidation" class="form-text text-muted">Müşteri adı 50 karakteri geçemez.</small>
+            </div>
+            <div class="form-group">
+                @Html.Label("Sıra No : ")
+                @Html.TextBoxFor(x => x.InvoiceOrder, new { @class = "form-control", @placeholder = "" })
+                <small id="departmentNameValidation" class="form-text text-muted">Müşteri soyadı 50 karakteri geçemez.</small>
+            </div>
+            <div class="form-group">
+                @Html.Label("Tarih : ")
+                @Html.DropDownListFor(x => x.InvoiceDate, (List<SelectListItem>)ViewBag.departmentList, new { @class = "form-control" })
+            </div> <div class="form-group">
+                @Html.Label("Saat : ")
+                @Html.DropDownListFor(x => x.InvoiceHour, (List<SelectListItem>)ViewBag.departmentList, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.Label("Teslim Eden : ")
+                @Html.TextBoxFor(x => x.InvoiceDeliverer, new { @class = "form-control", @placeholder = "" })
+                <small id="departmentNameValidation" class="form-text text-muted">Müşteri adı 50 karakteri geçemez.</small>
+            </div>
+            <div class="form-group">
+                @Html.Label("Teslim Alan : ")
+                @Html.TextBoxFor(x => x.InvoiceReceiver, new { @class = "form-control", @placeholder = "" })
+                <small id="departmentNameValidation" class="form-text text-muted">Müşteri adı 50 karakteri geçemez.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Kaydet</button>
+        </form>
+    </div>
+</div>
+
+
