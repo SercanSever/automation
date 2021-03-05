@@ -10,9 +10,15 @@
 #video
 *.mp4
 
+#template
+*/weblogin
+*/Web
+*/AdminLTE-3.0.4
+
 #nuget
 *.js
 *.css
+*.html
 
 # User-specific files
 *.rsuser
