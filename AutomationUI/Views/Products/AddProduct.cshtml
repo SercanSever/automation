@@ -14,7 +14,7 @@
         <form class="col-sm-4" method="post">
             <div class="form-group">
                 @Html.Label("Ürün Adı : ")
-                @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control", @placeholder = "Air Jordan.." })
+                @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control"})
                 <small id="productNameValidation" class="form-text text-muted">Ürün adı 50 karakteri geçemez.</small>
             </div>
             <div class="form-group">
@@ -23,23 +23,19 @@
             </div>
             <div class="form-group">
                 @Html.Label("Marka : ")
-                @Html.TextBoxFor(x => x.Brand, new { @class = "form-control", @placeholder = "Nike.." })
+                @Html.TextBoxFor(x => x.Brand, new { @class = "form-control"})
             </div>
             <div class="form-group">
                 @Html.Label("Fiyat : ")
-                @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control", @placeholder = "360.." })
+                @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control", @placeholder = "₺" })
             </div>
             <div class="form-group">
                 @Html.Label("Stok Miktarı : ")
-                @Html.TextBoxFor(x => x.UnitInStock, new { @class = "form-control", @placeholder = "120.." })
+                @Html.TextBoxFor(x => x.UnitInStock, new { @class = "form-control"})
             </div>
             <div class="form-group">
                 @Html.Label("Resin : ")
-                @Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control", @placeholder = "360.." })
-            </div>
-            <div class="form-check mb-2">
-                @Html.CheckBoxFor(x => x.IsActive, new { @class = "form-check-input" })
-                <label class="form-check-label" for="checkIsActive">Aktif / Pasif</label>
+                @Html.TextBoxFor(x => x.ProductImage, new { @class = "form-control"})
             </div>
             <button type="submit" class="btn btn-primary">Kaydet</button>
         </form>

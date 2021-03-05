@@ -11,7 +11,7 @@
         <li class="breadcrumb-item lead"><strong>Fatura Detayları</strong></li>
     </ol>
     <div class="row mt-3 mb-5 border-bottom border-top">
-        @*<a class="btn btn-primary shadow" href="/Invoice/AddInvoice">Fatura Detayı Ekle</a>*@
+        <a class="btn btn-primary ml-sm-3 shadow" href="/Invoice/AddInvoice">Yazdır</a>
         <table id="invoiceDetailsTable" class="table table-hover table-striped table-sm p-sm-1 mt-2 mb-5 shadow">
             <thead>
                 <tr>
@@ -43,10 +43,7 @@
                         <td class="p-2">@invoiceDetails.InvoiceContentUnitPrice</td>
                         <td class="p-2">@invoiceDetails.InvoiceContentTotal</td>
                         <td class="text-sm-right">
-                            <a class="btn btn-warning btn-sm mr-4" href="/InvoiceDetails/UpdateInvoiceDetail/@invoiceDetails.InvoiceId">Güncelle</a>
-                        </td>
-                        <td class="text-sm-right">
-                            <a class="btn btn-success btn-sm mr-4" href="/InvoiceDetails/UpdateInvoiceDetail/@invoiceDetails.InvoiceId">Açıklama Ekle</a>
+                            <a class="btn btn-success btn-sm mr-4" href="/InvoiceDetails/UpdateInvoiceDetail/@invoiceDetails.InvoiceId">Açıklama Güncelle</a>
                         </td>
                     </tr>
 

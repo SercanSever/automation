@@ -16,5 +16,6 @@ namespace Automation.Business.Abstract
         void Add(Product product);
         void Update(Product product);
         List<ProductDetailDto> GetProductDetails();
+        ProductDetailDto GetProductDetailsById(int id);
     }
 }

@@ -1,0 +1,80 @@
+﻿@using AutomationUI.Models
+@model InvoiceListViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid p-4">
+    <ol class="breadcrumb shadow">
+        <li class="breadcrumb-item lead"><strong>Faturalar</strong></li>
+    </ol>
+    <div class="row mt-3 mb-5 border-bottom border-top">
+        <a class="btn btn-primary ml-sm-3 shadow" href="/Invoices/AddInvoice">Fatura Ekle</a>
+        <table id="invoiceTable" class="table table-hover table-striped table-sm p-sm-1 mt-2 mb-5 shadow">
+            <thead>
+                <tr>
+                    <th>Seri No </th>
+                    <th>Sıra No</th>
+                    <th>Tarih</th>
+                    <th>Saat</th>
+                    <th>Teslim Eden</th>
+                    <th>Teslim Alan</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var invoice in Model.Invoices)
+                {
+                    <tr>
+                        <td class="p-2">@invoice.InvoiceSerial</td>
+                        <td class="p-2">@invoice.InvoiceOrder</td>
+                        <td class="p-2">@invoice.InvoiceDate</td>
+                        <td class="p-2">@invoice.InvoiceHour</td>
+                        <td class="p-2">@invoice.InvoiceDeliverer</td>
+                        <td class="p-2">@invoice.InvoiceReceiver</td>
+                        @if (!invoice.IsActive)
+                        {
+                            <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
+                        }
+                        else
+                        {
+                            <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
+                        }
+                        <td></td>
+                        <td class="text-right"><a class="btn btn-success btn-sm" href="/InvoiceDetails/Index/@invoice.InvoiceId">Detay</a></td>
+
+                        <td class="text-sm-right">
+                            <a class="btn btn-warning btn-sm mr-4" href="/Invoices/UpdateInvoice/@invoice.InvoiceId">Güncelle</a>
+                        </td>
+                        @if (invoice.IsActive)
+                        {
+                            <td class="text-sm-left">
+                                <a class="btn btn-danger btn-sm text-center mr-4" href="/Invoices/DeleteInvoice/@invoice.InvoiceId">Kaldır</a>
+                            </td>
+                        }
+                        else
+                        {
+                            <td class="text-sm-left">
+                                <a class="btn btn-primary btn-sm text-center mr-4" href="/Invoices/DeleteInvoice/@invoice.InvoiceId">Ekle</a>
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@Html.Partial("_Datatable")
+<script>
+    $('#invoiceTable').DataTable({
+        "language": {
+            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+        }
+    });
+
+</script>
+

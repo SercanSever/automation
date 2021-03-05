@@ -5,14 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-
 <div class="container-fluid p-4">
     <ol class="breadcrumb shadow">
         <li class="breadcrumb-item lead"><strong>Ürünler</strong></li>
     </ol>
     <div class="row mt-3 mb-5 border-bottom border-top">
-        <a class="btn btn-primary shadow" href="/Products/AddProduct">Ürün Ekle</a>
+        <a class="btn btn-primary ml-sm-3 shadow" href="/Products/AddProduct">Ürün Ekle</a>
         <table id="productTable" class="table table-hover table-striped table-sm p-sm-1 mt-2 mb-5 shadow">
             <thead>
                 <tr>
@@ -22,6 +20,8 @@
                     <th>Fiyat</th>
                     <th>Stok</th>
                     <th class="text-center">Stok Durumu</th>
+                    <th></th>
+                    <th></th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -43,6 +43,9 @@
                         {
                             <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
                         }
+                        <td class="text-sm-left">
+                            <a class="btn btn-success btn-sm text-center mr-4" href="/ProductDetails/Index/@product.ProductId">Detay</a>
+                        </td>
 
                         <td class="text-sm-right">
                             <a class="btn btn-warning btn-sm mr-4" href="/Products/UpdateProduct/@product.ProductId">Güncelle</a>
@@ -65,7 +68,6 @@
         </table>
     </div>
 </div>
-
 @Html.Partial("_Datatable")
 <script>
     $('#productTable').DataTable({
@@ -73,7 +75,6 @@
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
         }
     });
-
 </script>
 
 

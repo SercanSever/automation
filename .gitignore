@@ -11,6 +11,8 @@
 *.mp4
 
 #nuget
+*.js
+*.css
 
 # User-specific files
 *.rsuser

@@ -1,4 +1,5 @@
 ﻿using Automation.Business.DependencyResonvers.Ninject;
+using Automation.Business.MappingResolvers.AutoMapper;
 using Automation.Core.Utilities.Mvc.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -18,7 +19,7 @@ namespace AutomationUI
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule()));
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory(new BusinessModule(),new AutoMapperModule()));
         }
     }
 }
