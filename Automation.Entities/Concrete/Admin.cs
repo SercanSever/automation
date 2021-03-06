@@ -17,8 +17,6 @@ namespace Automation.Entities.Concrete
         [Column(TypeName = "NVarChar")]
         [StringLength(50)]
         public string AdminPassword { get; set; }
-        [Column(TypeName = "Char")]
-        [StringLength(1)]
-        public string AdminAuth { get; set; }
+       
     }
 }

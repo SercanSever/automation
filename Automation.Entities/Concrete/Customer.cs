@@ -23,6 +23,9 @@ namespace Automation.Entities.Concrete
         [Column(TypeName = "NVarChar")]
         [StringLength(50)]
         public string CustomerEmail { get; set; }
+        [Column(TypeName = "NVarChar")]
+        [StringLength(20)]
+        public string Password { get; set; }
         public bool IsActive { get; set; }
         public ICollection<SalesDetail> SalesDetails { get; set; }
     }

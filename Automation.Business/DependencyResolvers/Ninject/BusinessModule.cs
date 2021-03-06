@@ -46,6 +46,9 @@ namespace Automation.Business.DependencyResonvers.Ninject
             Bind<IInvoiceDetailManager>().To<InvoiceDetailManager>();
             Bind<IInvoiceDetailDal>().To<InvoiceDetailDal>();
 
+            Bind<IAdminManager>().To<AdminManager>();
+            Bind<IAdminDal>().To<AdminDal>();
+
         }
     }
 }

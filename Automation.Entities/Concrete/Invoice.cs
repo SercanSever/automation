@@ -29,7 +29,6 @@ namespace Automation.Entities.Concrete
         [StringLength(50)]
         public string InvoiceReceiver { get; set; }
         public bool IsActive { get; set; }
-        public decimal TotalPrice { get; set; }
         public ICollection<InvoiceDetail> InvoiceDetails { get; set; }
     }
 }

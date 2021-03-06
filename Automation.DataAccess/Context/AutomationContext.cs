@@ -8,17 +8,17 @@ namespace Automation.DataAccess.Context
 {
     public class AutomationContext : DbContext
     {
-        private DbSet<Product> products;
+        //private DbSet<Product> products;
 
-        public DbSet<Product> GetProducts()
-        {
-            return products;
-        }
+        //public DbSet<Product> GetProducts()
+        //{
+        //    return products;
+        //}
 
-        public void SetProducts(DbSet<Product> value)
-        {
-            products = value;
-        }
+        //public void SetProducts(DbSet<Product> value)
+        //{
+        //    products = value;
+        //}
 
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Category> Categories { get; set; }
