@@ -1,4 +1,4 @@
-﻿using Automation.Core.Entities;
+﻿    using Automation.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
