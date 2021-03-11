@@ -20,10 +20,6 @@ namespace AutomationUI.Controllers
         [HttpGet]
         public ActionResult Index(int id)
         {
-            //var model = new ProductListViewModel
-            //{
-            //    GetProductDetailsById = _productManager.GetProductDetailsById(id)
-            //};
             var model = _productManager.GetById(id);
             return View(model);
         }
