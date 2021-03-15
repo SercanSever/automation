@@ -62,5 +62,14 @@ namespace AutomationUI.Controllers
             _employeeManager.Update(employee);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult EmployeeDetailList()
+        {
+            var model = new EmployeeListViewModel
+            {
+                Employees = _employeeManager.GetAll()
+            };
+            return View(model);
+        }
     }
 }

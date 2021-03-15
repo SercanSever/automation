@@ -8,7 +8,7 @@
 
 <div class="container-fluid p-4">
     <ol class="breadcrumb shadow">
-        <li class="breadcrumb-item lead"><strong>Departman Ekle</strong></li>
+        <li class="breadcrumb-item lead mb-sm-2"><strong>Departman Ekle</strong></li>
     </ol>
     <div class="row p-2 shadow">
         <form class="col-sm-4" method="post">
@@ -16,10 +16,6 @@
                 @Html.Label("Departman Adı : ")
                 @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control", @placeholder = "" })
                 <small id="departmentNameValidation" class="form-text text-muted">Departman adı 50 karakteri geçemez.</small>
-            </div>
-            <div class="form-check mb-2">
-                @Html.CheckBoxFor(x => x.IsActive, new { @class = "form-check-input" })
-                <label class="form-check-label" for="checkIsActive">Aktif / Pasif</label>
             </div>
             <button type="submit" class="btn btn-primary">Kaydet</button>
         </form>

@@ -2157,6 +2157,7 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Icons\Cv%27s\SercanSever.jpeg" />
     <Content Include="Icons\greenCircle.png" />
     <Content Include="Icons\redCircle.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
@@ -2751,6 +2752,7 @@
     <Content Include="weblogin\fonts\fontawesome-webfont.woff2" />
     <Content Include="weblogin\fonts\FontAwesome.otf" />
     <Content Include="Views\Shared\_AdminPartial.cshtml" />
+    <Content Include="Views\Employees\EmployeeDetailList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
