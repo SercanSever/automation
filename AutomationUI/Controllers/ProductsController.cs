@@ -72,5 +72,21 @@ namespace AutomationUI.Controllers
             };
             return View(model);
         }
+        [HttpGet]
+        public ActionResult Sell(int id)
+        {
+            var productListItems = new ProductListViewModel().GetProductNameListItems();
+            ViewBag.productListItems = productListItems;
+            var customerListItems = new CustomerListViewModel().GetCustomerListItems();
+            ViewBag.customerListItems = customerListItems;
+            var employeeListItems = new EmployeeListViewModel().GetEmployeeListItems();
+            ViewBag.employeeListItems = employeeListItems;
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Sell(SalesDetail salesDetail)
+        {
+            return View();
+        }
     }
 }

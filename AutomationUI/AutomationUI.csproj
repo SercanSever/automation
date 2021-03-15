@@ -2754,6 +2754,7 @@
     <Content Include="weblogin\fonts\FontAwesome.otf" />
     <Content Include="Views\Shared\_AdminPartial.cshtml" />
     <Content Include="Views\Employees\EmployeeDetailList.cshtml" />
+    <Content Include="Views\Products\Sell.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

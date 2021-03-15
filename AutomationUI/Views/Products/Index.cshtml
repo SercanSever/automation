@@ -20,7 +20,7 @@
                     <th>Fiyat</th>
                     <th>Stok</th>
                     <th class="text-center">Stok Durumu</th>
-                    <th></th>
+                    <th>Satış Yap</th>
                     <th></th>
                     <th></th>
                     <th></th>
@@ -29,41 +29,44 @@
             <tbody>
                 @foreach (var product in Model.GetProductDetails)
                 {
-                    <tr>
-                        <td class="p-2">@product.ProductName</td>
-                        <td class="p-2">@product.CategoryName</td>
-                        <td class="p-2">@product.Brand</td>
-                        <td class="p-2">@product.UnitPrice ₺</td>
-                        <td class="p-2">@product.UnitInStock</td>
-                        <td></td>
-                        @if (product.UnitInStock <= 5)
-                        {
-                            <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
-                        }
-                        else
-                        {
-                            <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
-                        }
-                        <td class="text-sm-left">
-                            <a class="btn btn-success btn-sm text-center mr-4" href="/ProductDetails/Index/@product.ProductId">Detay</a>
-                        </td>
+                <tr>
+                    <td class="p-2">@product.ProductName</td>
+                    <td class="p-2">@product.CategoryName</td>
+                    <td class="p-2">@product.Brand</td>
+                    <td class="p-2">@product.UnitPrice ₺</td>
+                    <td class="p-2">@product.UnitInStock</td>
+                    <td></td>
+                    @if (product.UnitInStock <= 5)
+                    {
+                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
+                    }
+                    else
+                    {
+                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
+                    }
+                    <td class="text-sm-left">
+                        <a class="btn btn-outline-dark btn-sm text-center mr-4" href="/Products/Sell/@product.ProductId">Satış Yap</a>
+                    </td>
+                    <td class="text-sm-left">
+                        <a class="btn btn-success btn-sm text-center mr-4" href="/ProductDetails/Index/@product.ProductId">Detay</a>
+                    </td>
 
-                        <td class="text-sm-right">
-                            <a class="btn btn-warning btn-sm mr-4" href="/Products/UpdateProduct/@product.ProductId">Güncelle</a>
+                    <td class="text-sm-right">
+                        <a class="btn btn-warning btn-sm mr-4" href="/Products/UpdateProduct/@product.ProductId">Güncelle</a>
+                    </td>
+                    @if (product.IsActive)
+                    {
+                        <td class="text-sm-left">
+                            <a class="btn btn-danger btn-sm text-center mr-4" href="/Products/DeleteProduct/@product.ProductId">Kaldır</a>
                         </td>
-                        @if (product.IsActive)
-                        {
-                            <td class="text-sm-left">
-                                <a class="btn btn-danger btn-sm text-center mr-4" href="/Products/DeleteProduct/@product.ProductId">Kaldır</a>
-                            </td>
-                        }
-                        else
-                        {
-                            <td class="text-sm-left">
-                                <a class="btn btn-primary btn-sm text-center mr-4" href="/Products/DeleteProduct/@product.ProductId">Ekle</a>
-                            </td>
-                        }
-                    </tr>
+                    }
+                    else
+                    {
+                        <td class="text-sm-left">
+                            <a class="btn btn-primary btn-sm text-center mr-4" href="/Products/DeleteProduct/@product.ProductId">Ekle</a>
+                        </td>
+                    }
+                </tr>
                 }
             </tbody>
         </table>

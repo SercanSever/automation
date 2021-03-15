@@ -30,10 +30,10 @@ namespace AutomationUI.Controllers
         [HttpGet]
         public ActionResult AddSalesDetail()
         {
-            var productListItems = new ProductListViewModel().GetProductNameListItems();
-            ViewBag.productListItems = productListItems;
             var brandListItems = new ProductListViewModel().GetBrandListItems();
             ViewBag.brandListItems = brandListItems;
+            var productListItems = new ProductListViewModel().GetProductNameListItems();
+            ViewBag.productListItems = productListItems;
             var customerListItems = new CustomerListViewModel().GetCustomerListItems();
             ViewBag.customerListItems = customerListItems;
             var employeeListItems = new EmployeeListViewModel().GetEmployeeListItems();
