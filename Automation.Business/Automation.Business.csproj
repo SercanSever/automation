@@ -88,6 +88,7 @@
     <Compile Include="Abstract\IInvoiceManager.cs" />
     <Compile Include="Abstract\IProductManager.cs" />
     <Compile Include="Abstract\ISalesDetailManager.cs" />
+    <Compile Include="Abstract\IToDoManager.cs" />
     <Compile Include="Concrete\AdminManager.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\CustomerManager.cs" />
@@ -98,6 +99,7 @@
     <Compile Include="Concrete\InvoiceManager.cs" />
     <Compile Include="Concrete\ProductManager.cs" />
     <Compile Include="Concrete\SalesDetailManager.cs" />
+    <Compile Include="Concrete\ToDoManager.cs" />
     <Compile Include="DependencyResolvers\Ninject\BusinessModule.cs" />
     <Compile Include="MappingResolvers\AutoMapper\AutoMapperModule.cs" />
     <Compile Include="MappingResolvers\AutoMapper\Profiles\BusinessProfiles.cs" />

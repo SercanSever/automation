@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Automation.Core.Entities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Automation.Entities.Concrete
 {
-    public class ToDo
+    public class ToDo : IEntity
     {
         [Key]
         public int Id { get; set; }

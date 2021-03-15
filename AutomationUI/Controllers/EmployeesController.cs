@@ -3,6 +3,7 @@ using Automation.Entities.Concrete;
 using AutomationUI.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -37,6 +38,14 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult AddEmployee(Employee employee)
         {
+            if (Request.Files.Count > 0)
+            {
+                string fileName = $"{Guid.NewGuid()}{Path.GetFileName(Request.Files[0].FileName)}";
+                string extension = Path.GetExtension(Request.Files[0].FileName);
+                string filePath = "~/Images/" + fileName + extension;
+                Request.Files[0].SaveAs(Server.MapPath(filePath));
+                employee.EmployeeImage = filePath;
+            }
             _employeeManager.Add(employee);
             return RedirectToAction("Index");
         }
@@ -59,6 +68,14 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult UpdateEmployee(Employee employee)
         {
+            if (Request.Files.Count > 0)
+            {
+                string fileName = $"{Guid.NewGuid()}{Path.GetFileName(Request.Files[0].FileName)}";
+                string extension = Path.GetExtension(Request.Files[0].FileName);
+                string filePath = "~/Images/" + fileName + extension;
+                Request.Files[0].SaveAs(Server.MapPath(filePath));
+                employee.EmployeeImage = filePath;
+            }
             _employeeManager.Update(employee);
             return RedirectToAction("Index");
         }

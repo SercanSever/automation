@@ -27,38 +27,39 @@
             <tbody>
                 @foreach (var employee in Model.Employees)
                 {
-                    <tr>
-                        <td class="p-2">@employee.EmployeeName @employee.EmployeeSurname</td>
-                        <td class="p-2">@employee.Department.DepartmentName</td>
-                        <td></td>
-                        @if (!employee.IsActive)
-                        {
-                            <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
-                        }
-                        else
-                        {
-                            <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
-                        }
-                        <td class="text-sm-right">
-                            <a class="btn btn-success btn-sm text-sm-right" href="/Departments/DepartmentEmployeeSales/@employee.EmployeeId">Satışları</a>
-                        </td>
+                <tr>
+                    <td class="p-2">@employee.EmployeeName @employee.EmployeeSurname</td>
+                    <td class="p-2">@employee.Department.DepartmentName</td>
+                    <td><img src="@Url.Content(employee.EmployeeImage)" width="50" /></td>
+                    <td></td>
+                    @if (!employee.IsActive)
+                    {
+                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
+                    }
+                    else
+                    {
+                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
+                    }
+                    <td class="text-sm-right">
+                        <a class="btn btn-success btn-sm text-sm-right" href="/Departments/DepartmentEmployeeSales/@employee.EmployeeId">Satışları</a>
+                    </td>
 
-                        <td class="text-sm-right">
-                            <a class="btn btn-warning btn-sm mr-sm-2" href="/Employees/UpdateEmployee/@employee.DepartmentId">Güncelle</a>
+                    <td class="text-sm-right">
+                        <a class="btn btn-warning btn-sm mr-sm-2" href="/Employees/UpdateEmployee/@employee.EmployeeId">Güncelle</a>
+                    </td>
+                    @if (employee.IsActive)
+                    {
+                        <td class="text-sm-left">
+                            <a class="btn btn-danger btn-sm text-center" href="/Employees/DeleteEmployee/@employee.EmployeeId">Kaldır</a>
                         </td>
-                        @if (employee.IsActive)
-                        {
-                            <td class="text-sm-left">
-                                <a class="btn btn-danger btn-sm text-center" href="/Employees/DeleteEmployee/@employee.DepartmentId">Kaldır</a>
-                            </td>
-                        }
-                        else
-                        {
-                            <td class="text-sm-left">
-                                <a class="btn btn-primary btn-sm text-center" href="/Employees/DeleteEmployee/@employee.DepartmentId">Ekle</a>
-                            </td>
-                        }
-                    </tr>
+                    }
+                    else
+                    {
+                        <td class="text-sm-left">
+                            <a class="btn btn-primary btn-sm text-center" href="/Employees/DeleteEmployee/@employee.EmployeeId">Ekle</a>
+                        </td>
+                    }
+                </tr>
                 }
             </tbody>
         </table>
