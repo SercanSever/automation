@@ -12,16 +12,20 @@ namespace Automation.Business.Concrete
     public class SalesDetailManager : ISalesDetailManager
     {
         ISalesDetailDal _salesDetailDal;
+        IProductManager _productManager;
 
-        public SalesDetailManager(ISalesDetailDal salesDetailDal)
+        public SalesDetailManager(ISalesDetailDal salesDetailDal, IProductManager productManager)
         {
             _salesDetailDal = salesDetailDal;
+            _productManager = productManager;
         }
 
         public void Add(SalesDetail salesDetail)
         {
+            DropOffStock(salesDetail);
             SalasDetailDate(salesDetail);
             MultiplyQuantityAndPrice(salesDetail);
+
             _salesDetailDal.Add(salesDetail);
         }
 
@@ -58,6 +62,14 @@ namespace Automation.Business.Concrete
         private void SalasDetailDate(SalesDetail salesDetail)
         {
             salesDetail.SalesDetailDate = DateTime.Now;
+        }
+        private void DropOffStock(SalesDetail salesDetail)
+        {
+            var product = _productManager.GetById(salesDetail.ProductId);
+            if (product.UnitInStock >= 0)
+            {
+                salesDetail.Product.UnitInStock -= salesDetail.SalesDetailQuantity;
+            }
         }
     }
 }

@@ -35,10 +35,9 @@
                     <td class="p-2">@product.Brand</td>
                     <td class="p-2">@product.UnitPrice ₺</td>
                     <td class="p-2">@product.UnitInStock</td>
-                    <td></td>
                     @if (product.UnitInStock <= 5)
                     {
-                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
+                        <td class="p-2 text-left"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
                     }
                     else
                     {

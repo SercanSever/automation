@@ -5,20 +5,17 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Sell</h2>
-
-
 
 <div class="container-fluid p-4">
     <ol class="breadcrumb shadow">
-        <li class="breadcrumb-item lead"><strong>Satış Ekle</strong></li>
+        <li class="breadcrumb-item lead"><strong>Satış Yap</strong></li>
     </ol>
     <div class="row p-2 shadow">
         <form class="col-sm-4" method="post">
-
+            <input type="text" name="ProductId" value="@ViewBag.productId" hidden />
             <div class="form-group">
-                @Html.Label("Ürün Seçiniz : ")
-                @Html.DropDownListFor(x => x.ProductId, (List<SelectListItem>)ViewBag.productListItems, new { @class = "form-control" })
+                @Html.Label("Ürün : ")
+                <h3>@ViewBag.productName </h3>
             </div>
             <div class="form-group">
                 @Html.Label("Personel Seçiniz : ")
@@ -36,29 +33,31 @@
                     @Html.Label("Personel : ")
                     @Html.TextBoxFor(x => x.Employee.EmployeeName, new { @class = "form-control" })
                 </div>*@
-            @*<div class="form-group">
-                    @Html.Label("Ürün : ")
-                    @Html.TextBoxFor(x => x.Product.ProductName, new { @class = "form-control" })
-                </div>*@
             <div class="form-group">
                 @Html.Label("Adet : ")
-                @Html.TextBoxFor(x => x.SalesDetailQuantity, new { @class = "form-control" })
+                <input class="form-control" id="productQuantity" type="number" name="SalesDetailQuantity" onchange="Multiply();" min="1" />
             </div>
             <div class="form-group">
                 @Html.Label("Fiyat : ")
-                @Html.TextBoxFor(x => x.SalesDetailPrice, new { @class = "form-control" })
+                <input class="form-control" id="productPrice" type="text" name="SalesDetailPrice" value="@ViewBag.productPrice" onkeyup="Multiply();" min="1" />
             </div>
+
             <div class="form-group">
-                @Html.Label("Fiyat : ")
-                @Html.TextBoxFor(x => x.SalesDetailTotal, new { @class = "form-control" })
-            </div>
-            <div class="form-group">
-                @Html.Label("Fiyat : ")
-                @Html.TextBoxFor(x => x.SalesDetailDate, new { @class = "form-control" })
+                @Html.Label("Total : ")
+                <input class="form-control" value="0" id="productTotal" readonly type="number" name="SalesDetailTotal" min="1" />
             </div>
             <button type="submit" class="btn btn-primary">Satış Yap</button>
         </form>
     </div>
-</div>
+    <script>
+        function Multiply() {
+            var price = document.getElementById("productPrice").value;
+            var quantity = document.getElementById("productQuantity").value;
+            var result = parseInt(price) * parseInt(quantity);
+            if (!isNaN(result)) {
+                document.getElementById("productTotal").value = result;
+            }
+        }
+    </script>
 
 

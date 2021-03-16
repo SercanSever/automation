@@ -13,11 +13,13 @@ namespace AutomationUI.Controllers
     {
         IProductManager _productManager;
         ICategoryManager _categoryManager;
+        ISalesDetailManager _salesDetailManager;
 
-        public ProductsController(IProductManager productManager, ICategoryManager categoryManager)
+        public ProductsController(IProductManager productManager, ICategoryManager categoryManager, ISalesDetailManager salesDetailManager)
         {
             _productManager = productManager;
             _categoryManager = categoryManager;
+            _salesDetailManager = salesDetailManager;
         }
         [HttpGet]
         public ActionResult Index()
@@ -75,18 +77,22 @@ namespace AutomationUI.Controllers
         [HttpGet]
         public ActionResult Sell(int id)
         {
-            var productListItems = new ProductListViewModel().GetProductNameListItems();
-            ViewBag.productListItems = productListItems;
             var customerListItems = new CustomerListViewModel().GetCustomerListItems();
             ViewBag.customerListItems = customerListItems;
             var employeeListItems = new EmployeeListViewModel().GetEmployeeListItems();
             ViewBag.employeeListItems = employeeListItems;
+            var product = _productManager.GetById(id);
+            ViewBag.productId = product.ProductId;
+            ViewBag.productName = product.ProductName;
+            ViewBag.productPrice = product.UnitPrice;
             return View();
         }
         [HttpPost]
         public ActionResult Sell(SalesDetail salesDetail)
         {
-            return View();
+            salesDetail.SalesDetailDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+            _salesDetailManager.Add(salesDetail);
+            return RedirectToAction("Index", "SalesDetails");
         }
     }
 }
