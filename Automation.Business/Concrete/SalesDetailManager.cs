@@ -68,7 +68,8 @@ namespace Automation.Business.Concrete
             var product = _productManager.GetById(salesDetail.ProductId);
             if (product.UnitInStock >= 0)
             {
-                salesDetail.Product.UnitInStock -= salesDetail.SalesDetailQuantity;
+                product.UnitInStock -= salesDetail.SalesDetailQuantity;
+                _productManager.Update(product);
             }
         }
     }
