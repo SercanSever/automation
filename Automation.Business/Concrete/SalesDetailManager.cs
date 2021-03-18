@@ -55,6 +55,10 @@ namespace Automation.Business.Concrete
             MultiplyQuantityAndPrice(salesDetail);
             _salesDetailDal.Update(salesDetail);
         }
+
+
+
+
         private void MultiplyQuantityAndPrice(SalesDetail salesDetail)
         {
             salesDetail.SalesDetailTotal = salesDetail.SalesDetailPrice * salesDetail.SalesDetailQuantity;
