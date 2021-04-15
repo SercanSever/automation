@@ -139,8 +139,6 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ExpensesController.cs" />
     <Compile Include="Controllers\GraphicsController.cs" />
-    <Compile Include="Controllers\InvoicesController.cs" />
-    <Compile Include="Controllers\InvoiceDetailsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductDetailsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -153,8 +151,6 @@
     <Compile Include="Models\DepartmentListViewModel.cs" />
     <Compile Include="Models\EmployeeListViewModel.cs" />
     <Compile Include="Models\ExpenseListViewModel.cs" />
-    <Compile Include="Models\InvoiceDetailListViewModel.cs" />
-    <Compile Include="Models\InvoiceListViewModel.cs" />
     <Compile Include="Models\ProductListViewModel.cs" />
     <Compile Include="Models\SalesDetailListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -2738,14 +2734,8 @@
     <Content Include="Views\Shared\_Datatable.cshtml" />
     <Content Include="Views\Products\WriteProductListToPdf.cshtml" />
     <Content Include="Views\Shared\_DatatableXl.cshtml" />
-    <Content Include="Views\Invoices\Index.cshtml" />
-    <Content Include="Views\InvoiceDetails\Index.cshtml" />
-    <Content Include="Views\Invoices\AddInvoice.cshtml" />
-    <Content Include="Views\Invoices\UpdateInvoice.cshtml" />
-    <Content Include="Views\InvoiceDetails\UpdateInvoiceDetail.cshtml" />
     <Content Include="Views\Boards\Index.cshtml" />
     <Content Include="Views\ProductDetails\Index.cshtml" />
-    <Content Include="Views\InvoiceDetails\AddInvoiceDetail.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="weblogin\fonts\fontawesome-webfont.eot" />
     <Content Include="weblogin\fonts\fontawesome-webfont.ttf" />
@@ -2757,6 +2747,8 @@
     <Content Include="Views\Products\Sell.cshtml" />
     <Content Include="Views\Graphics\Index.cshtml" />
     <Content Include="Views\Graphics\GraphicList.cshtml" />
+    <Content Include="Views\Expenses\AddExpense.cshtml" />
+    <Content Include="Views\Expenses\UpdateExpense.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

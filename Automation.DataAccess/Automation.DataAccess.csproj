@@ -78,8 +78,6 @@
     <Compile Include="Abstract\IDepartmentDal.cs" />
     <Compile Include="Abstract\IEmployeeDal.cs" />
     <Compile Include="Abstract\IExpenseDal.cs" />
-    <Compile Include="Abstract\IInvoiceDal.cs" />
-    <Compile Include="Abstract\IInvoiceDetailDal.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Abstract\ISalesDetailDal.cs" />
     <Compile Include="Concrete\AdminDal.cs" />
@@ -88,8 +86,6 @@
     <Compile Include="Concrete\DepartmentDal.cs" />
     <Compile Include="Concrete\EmployeeDal.cs" />
     <Compile Include="Concrete\ExpenseDal.cs" />
-    <Compile Include="Concrete\InvoiceDal.cs" />
-    <Compile Include="Concrete\InvoiceDetailDal.cs" />
     <Compile Include="Concrete\ProductDal.cs" />
     <Compile Include="Concrete\SalesDetailDal.cs" />
     <Compile Include="Context\AutomationContext.cs" />

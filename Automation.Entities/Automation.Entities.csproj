@@ -57,8 +57,6 @@
     <Compile Include="Concrete\Department.cs" />
     <Compile Include="Concrete\Employee.cs" />
     <Compile Include="Concrete\Expense.cs" />
-    <Compile Include="Concrete\Invoice.cs" />
-    <Compile Include="Concrete\InvoiceDetail.cs" />
     <Compile Include="Concrete\Product.cs" />
     <Compile Include="Concrete\Role.cs" />
     <Compile Include="Concrete\SalesDetail.cs" />

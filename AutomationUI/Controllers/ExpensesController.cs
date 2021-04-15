@@ -1,4 +1,5 @@
 ﻿using Automation.Business.Abstract;
+using Automation.Entities.Concrete;
 using AutomationUI.Models;
 using System;
 using System.Collections.Generic;
@@ -26,5 +27,31 @@ namespace AutomationUI.Controllers
             };
             return View(model);
         }
+        [HttpGet]
+        public ActionResult AddExpense()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult AddExpense(Expense expense)
+        {
+            expense.ExpenseDate = DateTime.Now;
+            _expenseManager.Add(expense);
+            return RedirectToAction("AddExpense");
+        }
+        [HttpGet]
+        public ActionResult UpdateExpense(int id)
+        {
+            var expense = _expenseManager.GetById(id);
+            return View("UpdateExpense", expense);
+        }
+        [HttpPost]
+        public ActionResult UpdateExpense(Expense expense)
+        {
+            expense.ExpenseDate = DateTime.Now;
+            _expenseManager.Update(expense);
+            return RedirectToAction("Index");
+        }
+
     }
 }
