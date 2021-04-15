@@ -15,11 +15,24 @@ namespace AutomationUI.Models
         {
             using (AutomationContext context = new AutomationContext())
             {
-                var result = from e in context.Employees
+                var result = from e in context.Employees.Where(e => e.IsActive == true)
                              select new SelectListItem
                              {
                                  Text = e.EmployeeName,
                                  Value = e.EmployeeId.ToString()
+                             };
+                return result.ToList();
+            }
+        }
+        public List<SelectListItem> GetRoles()
+        {
+            using (AutomationContext context = new AutomationContext())
+            {
+                var result = from r in context.Roles
+                             select new SelectListItem
+                             {
+                                 Text = r.RoleName,
+                                 Value = r.RoleId.ToString()
                              };
                 return result.ToList();
             }

@@ -33,6 +33,8 @@ namespace AutomationUI.Controllers
         {
             var departmentList = new DepartmentListViewModel().GetDepartmentsListItems();
             ViewBag.departmentList = departmentList;
+            var roleList = new EmployeeListViewModel().GetRoles();
+            ViewBag.roleList = roleList;
             return View();
         }
         [HttpPost]
@@ -62,6 +64,8 @@ namespace AutomationUI.Controllers
         {
             var departmentList = new DepartmentListViewModel().GetDepartmentsListItems();
             ViewBag.departmentList = departmentList;
+            var roleList = new EmployeeListViewModel().GetRoles();
+            ViewBag.roleList = roleList;
             var employee = _employeeManager.GetById(id);
             return View("UpdateEmployee", employee);
         }

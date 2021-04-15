@@ -49,9 +49,6 @@ namespace Automation.Business.DependencyResonvers.Ninject
             Bind<IAdminManager>().To<AdminManager>();
             Bind<IAdminDal>().To<AdminDal>();
 
-            Bind<IToDoManager>().To<ToDoManager>();
-            Bind<IToDoDal>().To<ToDoDal>();
-
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Automation.DataAccess.Context
         public DbSet<InvoiceDetail> InvoiceDetails { get; set; }
         public DbSet<SalesDetail> SalesDetails { get; set; }
         public DbSet<Admin> Admins { get; set; }
-        public DbSet<ToDo> ToDos { get; set; }
+        public DbSet<Role> Roles { get; set; }
+
     }
 }

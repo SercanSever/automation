@@ -10,13 +10,13 @@ namespace AutomationUI.Controllers
 {
     public class BoardsController : Controller
     {
-        IToDoManager _ıToDoManager;
+  
         ICustomerManager _customerManager;
         IProductManager _productManager;
         ISalesDetailManager _salesDetailManager;
-        public BoardsController(IToDoManager ıToDoManager, ICustomerManager customerManager, IProductManager productManager, ISalesDetailManager salesDetailManager)
+        public BoardsController(ICustomerManager customerManager, IProductManager productManager, ISalesDetailManager salesDetailManager)
         {
-            _ıToDoManager = ıToDoManager;
+
             _customerManager = customerManager;
             _productManager = productManager;
             _salesDetailManager = salesDetailManager;

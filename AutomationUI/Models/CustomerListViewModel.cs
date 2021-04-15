@@ -15,7 +15,7 @@ namespace AutomationUI.Models
         {
             using (AutomationContext context = new AutomationContext())
             {
-                var result = from c in context.Customers
+                var result = from c in context.Customers.Where(c=>c.IsActive==true)
                              select new SelectListItem
                              {
                                  Text = c.CustomerName,

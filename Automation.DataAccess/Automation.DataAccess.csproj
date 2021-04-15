@@ -82,7 +82,6 @@
     <Compile Include="Abstract\IInvoiceDetailDal.cs" />
     <Compile Include="Abstract\IProductDal.cs" />
     <Compile Include="Abstract\ISalesDetailDal.cs" />
-    <Compile Include="Abstract\IToDoDal.cs" />
     <Compile Include="Concrete\AdminDal.cs" />
     <Compile Include="Concrete\CategoryDal.cs" />
     <Compile Include="Concrete\CustomerDal.cs" />
@@ -93,7 +92,6 @@
     <Compile Include="Concrete\InvoiceDetailDal.cs" />
     <Compile Include="Concrete\ProductDal.cs" />
     <Compile Include="Concrete\SalesDetailDal.cs" />
-    <Compile Include="Concrete\ToDoDal.cs" />
     <Compile Include="Context\AutomationContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

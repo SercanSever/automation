@@ -17,9 +17,9 @@
                 <tr>
                     <th>Adı</th>
                     <th>Departman</th>
-                    <th>Resim</th>
                     <th></th>
-                    <th class="text-sm-right">Satışlar</th>
+                    <th></th>
+                    <th></th>
                     <th></th>
                     <th></th>
                 </tr>
@@ -31,7 +31,6 @@
                     <td class="p-2">@employee.EmployeeName @employee.EmployeeSurname</td>
                     <td class="p-2">@employee.Department.DepartmentName</td>
                     <td><img src="@Url.Content(employee.EmployeeImage)" width="50" /></td>
-                    <td></td>
                     @if (!employee.IsActive)
                     {
                         <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>

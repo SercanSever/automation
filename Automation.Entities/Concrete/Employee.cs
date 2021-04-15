@@ -21,10 +21,9 @@ namespace Automation.Entities.Concrete
         [StringLength(200)]
         public string EmployeeImage { get; set; }
         public bool IsActive { get; set; }
-        [Column(TypeName = "Char")]
-        [StringLength(10)]
-        public string EmployeeAuth { get; set; }
         public ICollection<SalesDetail> SalesDetails { get; set; }
+        public int RoleId { get; set; }
+        public virtual Role Role { get; set; }
         public int DepartmentId { get; set; }
         public virtual Department Department { get; set; }
     }

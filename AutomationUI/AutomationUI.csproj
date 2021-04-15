@@ -157,7 +157,6 @@
     <Compile Include="Models\InvoiceListViewModel.cs" />
     <Compile Include="Models\ProductListViewModel.cs" />
     <Compile Include="Models\SalesDetailListViewModel.cs" />
-    <Compile Include="Models\ToDoListViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
