@@ -18,8 +18,17 @@ namespace Automation.Entities.Concrete
         [StringLength(50)]
         public string EmployeeSurname { get; set; }
         [Column(TypeName = "NVarChar")]
+        [StringLength(50)]
+        public string EmployeePhone { get; set; }
+        [Column(TypeName = "NVarChar")]
         [StringLength(200)]
         public string EmployeeImage { get; set; }
+        [Column(TypeName = "NVarChar")]
+        [StringLength(200)]
+        public string EmployeeAdress { get; set; }
+        [Column(TypeName = "NVarChar")]
+        [StringLength(200)]
+        public string EmployeeEmail { get; set; }
         public bool IsActive { get; set; }
         public ICollection<SalesDetail> SalesDetails { get; set; }
         public int RoleId { get; set; }

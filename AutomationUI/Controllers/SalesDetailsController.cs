@@ -23,7 +23,7 @@ namespace AutomationUI.Controllers
         {
             var model = new SalesDetailListViewModel
             {
-                SalesDetails = _salesDetailManager.GetAll()
+                SalesDetails = _salesDetailManager.GetAll().OrderByDescending(x => x.SalesDetailId).ToList()
             };
             return View(model);
         }

@@ -22,9 +22,11 @@ namespace Automation.Business.Concrete
 
         public void Add(SalesDetail salesDetail)
         {
+            StockControl(salesDetail);
             DropOffStock(salesDetail);
             SalasDetailDate(salesDetail);
             MultiplyQuantityAndPrice(salesDetail);
+
 
             _salesDetailDal.Add(salesDetail);
         }
@@ -58,7 +60,14 @@ namespace Automation.Business.Concrete
 
 
 
-
+        private void StockControl(SalesDetail salesDetail)
+        {
+            var product = _productManager.GetById(salesDetail.ProductId);
+            if (salesDetail.SalesDetailQuantity > product.UnitInStock)
+            {
+                throw new Exception("Stok Yetersiz");
+            }
+        }
         private void MultiplyQuantityAndPrice(SalesDetail salesDetail)
         {
             salesDetail.SalesDetailTotal = salesDetail.SalesDetailPrice * salesDetail.SalesDetailQuantity;

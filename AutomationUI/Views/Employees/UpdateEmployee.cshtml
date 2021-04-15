@@ -18,12 +18,22 @@
                 <div class="form-group">
                     @Html.Label("Adı : ")
                     @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
-                    <small id="categoryNameValidation" class="form-text text-muted">Departman adı 50 karakteri geçemez.</small>
                 </div>
                 <div class="form-group">
                     @Html.Label("Soyadı : ")
                     @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
-                    <small id="categoryNameValidation" class="form-text text-muted">Departman adı 50 karakteri geçemez.</small>
+                </div>
+                <div class="form-group">
+                    @Html.Label("Adres : ")
+                    @Html.TextAreaFor(x => x.EmployeeAdress, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Telefon : ")
+                    @Html.TextBoxFor(x => x.EmployeePhone, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Email : ")
+                    @Html.TextBoxFor(x => x.EmployeeEmail, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
                 </div>
                 <div class="form-group">
                     @Html.Label("Departman : ")

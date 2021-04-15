@@ -14,12 +14,14 @@ namespace AutomationUI.Controllers
         ICustomerManager _customerManager;
         IProductManager _productManager;
         ISalesDetailManager _salesDetailManager;
-        public BoardsController(ICustomerManager customerManager, IProductManager productManager, ISalesDetailManager salesDetailManager)
+        IExpenseManager _expenseManager;
+        public BoardsController(ICustomerManager customerManager, IProductManager productManager, ISalesDetailManager salesDetailManager,IExpenseManager expenseManager)
         {
 
             _customerManager = customerManager;
             _productManager = productManager;
             _salesDetailManager = salesDetailManager;
+            _expenseManager = expenseManager;
         }
 
         [HttpGet]
@@ -40,8 +42,12 @@ namespace AutomationUI.Controllers
             {
                 SalesDetails = _salesDetailManager.GetAll()
             };
-            ViewBag.sales = salesModel.SalesDetails.Count().ToString();
-
+            ViewBag.sales = salesModel.SalesDetails.Sum(x=>x.SalesDetailTotal).ToString();
+            var expenseModel = new ExpenseListViewModel
+            {
+                Expenses = _expenseManager.GetAll()
+            };
+            ViewBag.expenseTotal = expenseModel.Expenses.Sum(x=>x.ExpenseTotal).ToString();
             return View();
         }
     }

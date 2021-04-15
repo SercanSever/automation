@@ -4,11 +4,3 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Graphics</h2>
-@{
-    var graphic = new Chart(width: 500, height: 500);
-    graphic.AddTitle(text: "Kategorilere Göre Ürün Sayıları");
-    graphic.AddLegend(title: "Değerler");
-    graphic.AddSeries(name: "Veriler",chartType:"Doughnut", xValue: new[] { "Beyaz Eşya", "Elektronik", "Giyim" }, yValues: new[] { 500, 200, 300 });
-    graphic.Write();
-}

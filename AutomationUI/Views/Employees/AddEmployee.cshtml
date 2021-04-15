@@ -22,6 +22,18 @@
                     @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control", @placeholder = "" })
                 </div>
                 <div class="form-group col-sm-5">
+                    @Html.Label("Adres : ")
+                    @Html.TextAreaFor(x => x.EmployeeAdress, new { @class = "form-control", @placeholder = "" })
+                </div>
+                <div class="form-group col-sm-5">
+                    @Html.Label("Telefon : ")
+                    @Html.TextBoxFor(x => x.EmployeePhone, new { @class = "form-control", @placeholder = "" })
+                </div>
+                <div class="form-group col-sm-5">
+                    @Html.Label("Email : ")
+                    @Html.TextBoxFor(x => x.EmployeeEmail, new { @class = "form-control", @placeholder = "" })
+                </div>
+                <div class="form-group col-sm-5">
                     @Html.Label("Departman : ")
                     @Html.DropDownListFor(x => x.DepartmentId, (List<SelectListItem>)ViewBag.departmentList, new { @class = "form-control" })
                 </div>

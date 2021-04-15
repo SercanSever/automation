@@ -36,7 +36,7 @@
                         <td class="p-2">@salesDetail.Product.ProductName</td>
                         <td class="p-2">@salesDetail.Employee.EmployeeName @salesDetail.Employee.EmployeeSurname</td>
                         <td class="p-2">@salesDetail.Customer.CustomerName @salesDetail.Customer.CustomerSurname</td>
-                        <td class="p-2">@salesDetail.SalesDetailDate</td>
+                        <td class="p-2">@salesDetail.SalesDetailDate.ToShortDateString()</td>
                         <td class="p-2">@salesDetail.SalesDetailQuantity</td>
                         <td class="p-2">@salesDetail.SalesDetailPrice</td>
                         <td class="p-2">@salesDetail.SalesDetailTotal</td>
