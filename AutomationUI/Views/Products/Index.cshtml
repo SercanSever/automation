@@ -9,86 +9,77 @@
     <ol class="breadcrumb shadow">
         <li class="breadcrumb-item lead"><strong>Ürünler</strong></li>
     </ol>
-    <div class="row mt-3 mb-5 border-bottom border-top">
-        <a class="btn btn-primary ml-sm-3 mb-sm-3  shadow" href="/Products/AddProduct">Ürün Ekle</a>
-        <table id="productTable" class="table table-hover table-striped table-sm p-sm-1 mt-2 mb-5 shadow">
-            <thead>
+    <a class="btn btn-primary mb-sm-3 shadow" href="/Products/AddProduct">Ürün Ekle</a>
+    <table id="example" class="trow-border hover order-column shadow">
+        <thead>
+            <tr>
+                <th>Ürün Adı</th>
+                <th>Kategori</th>
+                <th>Marka</th>
+                <th>Fiyat</th>
+                <th>Stok</th>
+                <th class="text-center">Stok Durumu</th>
+                <th>Satış Yap</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model.GetProductDetails)
+            {
                 <tr>
-                    <th>Ürün Adı</th>
-                    <th>Kategori</th>
-                    <th>Marka</th>
-                    <th>Fiyat</th>
-                    <th>Stok</th>
-                    <th class="text-center">Stok Durumu</th>
-                    <th>Satış Yap</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var product in Model.GetProductDetails)
-                {
-                    <tr>
-                        <td class="p-2">@product.ProductName</td>
-                        <td class="p-2">@product.CategoryName</td>
-                        <td class="p-2">@product.Brand</td>
-                        <td class="p-2">@product.UnitPrice ₺</td>
-                        <td class="p-2">@product.UnitInStock</td>
-                        @if (product.UnitInStock <= 5)
-                        {
-                            <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
-                        }
-                        else
-                        {
-                            <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
-                        }
-                        @if (product.UnitInStock == 0)
-                        {
-                            <td class="text-sm-left">
-                                <a id="sell" class="btn btn-outline-dark disabled btn-sm text-center mr-4" href="/Products/Sell/@product.ProductId">Satış Yap</a>
-                            </td>
-                        }
-                        else
-                        {
-                            <td class="text-sm-left">
-                                <a id="sell" class="btn btn-outline-dark btn-sm text-center mr-4" href="/Products/Sell/@product.ProductId">Satış Yap</a>
-                            </td>
-                        }
+                    <td class="p-2">@product.ProductName</td>
+                    <td class="p-2">@product.CategoryName</td>
+                    <td class="p-2">@product.Brand</td>
+                    <td class="p-2">@product.UnitPrice ₺</td>
+                    <td class="p-2">@product.UnitInStock Adet</td>
+                    @if (product.UnitInStock <= 5)
+                    {
+                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
+                    }
+                    else
+                    {
+                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
+                    }
+                    @if (product.UnitInStock == 0)
+                    {
+                        <td class="text-sm-center">
+                            <a id="sell" class="btn btn-outline-dark disabled btn-sm text-center mr-4" href="/Products/Sell/@product.ProductId">Satış Yap</a>
+                        </td>
+                    }
+                    else
+                    {
+                        <td class="text-sm-center">
+                            <a id="sell" class="btn btn-outline-danger btn-lg" href="/Products/Sell/@product.ProductId">Satış Yap</a>
+                        </td>
+                    }
 
+                    <td class="text-sm-right">
+                        <a class="btn btn-success btn-sm text-center mr-4" href="/ProductDetails/Index/@product.ProductId">Detay</a>
+                    </td>
+
+                    <td class="text-sm-center">
+                        <a class="btn btn-warning btn-sm mr-4" href="/Products/UpdateProduct/@product.ProductId">Güncelle</a>
+                    </td>
+                    @if (product.IsActive)
+                    {
                         <td class="text-sm-left">
-                            <a class="btn btn-success btn-sm text-center mr-4" href="/ProductDetails/Index/@product.ProductId">Detay</a>
+                            <a class="btn btn-danger btn-sm text-center mr-4" href="/Products/DeleteProduct/@product.ProductId">Kaldır</a>
                         </td>
-
-                        <td class="text-sm-right">
-                            <a class="btn btn-warning btn-sm mr-4" href="/Products/UpdateProduct/@product.ProductId">Güncelle</a>
+                    }
+                    else
+                    {
+                        <td class="text-sm-left">
+                            <a class="btn btn-primary btn-sm text-center mr-4" href="/Products/DeleteProduct/@product.ProductId">Ekle</a>
                         </td>
-                        @if (product.IsActive)
-                        {
-                            <td class="text-sm-left">
-                                <a class="btn btn-danger btn-sm text-center mr-4" href="/Products/DeleteProduct/@product.ProductId">Kaldır</a>
-                            </td>
-                        }
-                        else
-                        {
-                            <td class="text-sm-left">
-                                <a class="btn btn-primary btn-sm text-center mr-4" href="/Products/DeleteProduct/@product.ProductId">Ekle</a>
-                            </td>
-                        }
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>
-@Html.Partial("_Datatable")
-<script>
-    $('#productTable').DataTable({
-        "language": {
-            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
-        }
-    });
-</script>
+
 
 
 

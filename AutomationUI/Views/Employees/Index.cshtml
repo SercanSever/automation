@@ -5,28 +5,29 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
 <div class="container-fluid">
     <ol class="breadcrumb mt-3 shadow">
         <li class="breadcrumb-item lead"><strong>Personeller</strong></li>
     </ol>
-    <div class="row mt-3 mb-5 border-bottom border-top">
-        <a class="btn btn-primary ml-sm-3 mb-sm-3 shadow" href="/Employees/AddEmployee">Personel Ekle</a>
-        <a class="btn btn-dark ml-sm-3 mb-sm-3 shadow" href="/Employees/EmployeeDetailList">Personel Detayları</a>
-        <table id="employeeTable" class="table table-hover table-striped table-sm p-sm-1 mt-2 mb-5 shadow">
-            <thead>
-                <tr>
-                    <th>Adı</th>
-                    <th>Departman</th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var employee in Model.Employees)
-                {
+    <a class="btn btn-primary ml-sm-3 mb-sm-3 shadow" href="/Employees/AddEmployee">Personel Ekle</a>
+    <a class="btn btn-dark ml-sm-3 mb-sm-3 shadow" href="/Employees/EmployeeDetailList">Personel Detayları</a>
+    <table id="example" class="trow-border hover order-column shadow">
+        <thead>
+            <tr>
+                <th>Adı</th>
+                <th>Departman</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var employee in Model.Employees)
+            {
                 <tr>
                     <td class="p-2">@employee.EmployeeName @employee.EmployeeSurname</td>
                     <td class="p-2">@employee.Department.DepartmentName</td>
@@ -43,7 +44,7 @@
                         <a class="btn btn-success btn-sm text-sm-right" href="/Departments/DepartmentEmployeeSales/@employee.EmployeeId">Satışları</a>
                     </td>
 
-                    <td class="text-sm-right">
+                    <td class="text-sm-center">
                         <a class="btn btn-warning btn-sm mr-sm-2" href="/Employees/UpdateEmployee/@employee.EmployeeId">Güncelle</a>
                     </td>
                     @if (employee.IsActive)
@@ -59,20 +60,22 @@
                         </td>
                     }
                 </tr>
-                }
-            </tbody>
-        </table>
-    </div>
+            }
+        </tbody>
+    </table>
+
+
 </div>
 
-@Html.Partial("_Datatable")
-<script>
-    $('#employeeTable').DataTable({
-        "language": {
-            "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
-        }
-    });
-</script>
+
+@*@Html.Partial("_Datatable")
+    <script>
+        $('#employeeTable').DataTable({
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Turkish.json"
+            }
+        });
+    </script>*@
 
 
 
