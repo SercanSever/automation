@@ -17,8 +17,6 @@
             <tr>
                 <th>Marka</th>
                 <th>Ürün</th>
-                <th>Perosnel</th>
-                <th>Müşteri</th>
                 <th>Tarih</th>
                 <th>Adet</th>
                 <th>Fiyat</th>
@@ -33,8 +31,6 @@
                 <tr>
                     <td class="p-2">@salesDetail.Product.Brand</td>
                     <td class="p-2">@salesDetail.Product.ProductName</td>
-                    <td class="p-2">@salesDetail.Employee.EmployeeName @salesDetail.Employee.EmployeeSurname</td>
-                    <td class="p-2">@salesDetail.Customer.CustomerName @salesDetail.Customer.CustomerSurname</td>
                     <td class="p-2">@salesDetail.SalesDetailDate.ToShortDateString()</td>
                     <td class="p-2">@salesDetail.SalesDetailQuantity</td>
                     <td class="p-2">@salesDetail.SalesDetailPrice</td>
@@ -71,6 +67,54 @@
             }
         </tbody>
 
+    </table>
+</div>
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb mt-sm-3 shadow">
+        <li class="breadcrumb-item lead"><strong>Satış Geçmişi</strong></li>
+    </ol>
+    <table id="graph" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Müşteri</th>
+                <th>Personel</th>
+                <th>Ürün</th>
+                <th>Stok Miktarı</th>
+                <th>Fiyat</th>
+                <th>Satış Adedi</th>
+                <th>Toplam Fiyat</th>
+                <th>Tarih</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sales in Model.SalesDetails)
+            {
+                <tr>
+                    <td>@sales.Customer.CustomerName</td>
+                    <td>@sales.Employee.EmployeeName</td>
+                    <td>@sales.Product.ProductName</td>
+                    <td>@sales.Product.UnitInStock</td>
+                    <td>@sales.Product.UnitPrice</td>
+                    <td>@sales.SalesDetailQuantity</td>
+                    <td>@sales.SalesDetailTotal</td>
+                    <td>@sales.SalesDetailDate</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Müşteri</th>
+                <th>Personel</th>
+                <th>Ürün</th>
+                <th>Stok Miktarı</th>
+                <th>Fiyat</th>
+                <th>Satış Adedi</th>
+                <th>Toplam Fiyat</th>
+                <th>Tarih</th>
+            </tr>
+        </tfoot>
     </table>
 </div>
 

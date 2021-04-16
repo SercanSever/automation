@@ -12,26 +12,15 @@ namespace AutomationUI.Controllers
 {
     public class GraphicsController : Controller
     {
-        IProductManager _productManager;
         ISalesDetailManager _salesDetailManager;
 
-        public GraphicsController(IProductManager productManager, ISalesDetailManager salesDetailManager)
+        public GraphicsController(ISalesDetailManager salesDetailManager)
         {
-            _productManager = productManager;
             _salesDetailManager = salesDetailManager;
         }
 
         [HttpGet]
         public ActionResult Index()
-        {
-            var salesDetailList = new SalesDetailListViewModel
-            {
-                SalesDetails = _salesDetailManager.GetAll()
-            };
-            return View(salesDetailList);
-        }
-        [HttpGet]
-        public ActionResult deneme()
         {
             return View();
         }
