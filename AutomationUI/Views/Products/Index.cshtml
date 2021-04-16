@@ -42,10 +42,10 @@
                     {
                         <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
                     }
-                    @if (product.UnitInStock == 0)
+                    @if (product.UnitInStock == 0 || product.IsActive == false)
                     {
                         <td class="text-sm-center">
-                            <a id="sell" class="btn btn-outline-dark disabled btn-sm text-center mr-4" href="/Products/Sell/@product.ProductId">Satış Yap</a>
+                            <a id="sell" class="btn btn-outline-dark disabled btn-lg text-center" href="/Products/Sell/@product.ProductId">Satış Yap</a>
                         </td>
                     }
                     else

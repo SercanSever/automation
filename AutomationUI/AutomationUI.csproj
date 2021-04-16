@@ -2746,9 +2746,9 @@
     <Content Include="Views\Employees\EmployeeDetailList.cshtml" />
     <Content Include="Views\Products\Sell.cshtml" />
     <Content Include="Views\Graphics\Index.cshtml" />
-    <Content Include="Views\Graphics\GraphicList.cshtml" />
     <Content Include="Views\Expenses\AddExpense.cshtml" />
     <Content Include="Views\Expenses\UpdateExpense.cshtml" />
+    <Content Include="Views\Graphics\deneme.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
