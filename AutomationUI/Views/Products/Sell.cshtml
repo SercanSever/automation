@@ -6,7 +6,7 @@
 }
 
 
-<div class="container-fluid p-4">
+<div class="container-fluid">
     <ol class="breadcrumb shadow">
         <li class="breadcrumb-item lead"><strong>Satış Yap</strong></li>
     </ol>
@@ -49,15 +49,16 @@
             <button type="submit" class="btn btn-primary">Satış Yap</button>
         </form>
     </div>
-    <script>
-        function Multiply() {
-            var price = document.getElementById("productPrice").value;
-            var quantity = document.getElementById("productQuantity").value;
-            var result = parseInt(price) * parseInt(quantity);
-            if (!isNaN(result)) {
-                document.getElementById("productTotal").value = result;
-            }
+</div>
+<script>
+    function Multiply() {
+        var price = document.getElementById("productPrice").value;
+        var quantity = document.getElementById("productQuantity").value;
+        var result = parseInt(price) * parseInt(quantity);
+        if (!isNaN(result)) {
+            document.getElementById("productTotal").value = result;
         }
-    </script>
+    }
+</script>
 
 

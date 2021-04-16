@@ -43,8 +43,8 @@ namespace Automation.Business.Concrete
 
         public ProductDetailDto GetProductDetailsById(int id)
         {
-            return _productDal.GetProductDetailById(x=>x.ProductId == id);
-        }
+            return _productDal.GetProductDetailById(x => x.ProductId == id);
+        }     
 
         public void Update(Product product)
         {

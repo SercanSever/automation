@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Automation</title>
-    @*@Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")*@
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
 
     <link href="~/Web/dist/css/styles.css" rel="stylesheet" />
     @*<link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />*@
@@ -100,11 +100,7 @@
                         <a class="nav-link" href="/Expenses/Index">
                             <div class="sb-nav-link-icon"><i class="fas fa-sticky-note"></i></div>
                             Giderler
-                        </a>
-                        <a class="nav-link" href="/Graphics/Index">
-                            <div class="sb-nav-link-icon"><i class="fas fa-industry"></i></div>
-                            İstatistikler
-                        </a>
+                        </a>             
                     </div>
                 </div>
                 <div class="sb-sidenav-footer">
@@ -130,23 +126,14 @@
         </div>
     </div>
 
-    @*@Scripts.Render("~/bundles/jquery")*@
-    @*<script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>*@
-    <script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>
+    @Scripts.Render("~/bundles/jquery")
+    @*<script src="https://code.jquery.com/jquery-3.5.1.js" crossorigin="anonymous"></script>*@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
     <script src="~/Web/dist/js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-    <script src="~/Web/dist/assets/demo/chart-area-demo.js"></script>
-    <script src="~/Web/dist/assets/demo/chart-bar-demo.js"></script>
-    <script src="~/Web/dist/assets/demo/datatables-demo.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" crossorigin="anonymous"></script>
-
-
-
     <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/searchpanes/1.2.1/js/dataTables.searchPanes.min.js" crossorigin="anonymous"></script>
     <script src="https://cdn.datatables.net/select/1.3.3/js/dataTables.select.min.js" crossorigin="anonymous"></script>
-    <script src="https://code.highcharts.com/highcharts.js" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function () {
             var table = $('#example').DataTable({
@@ -176,55 +163,10 @@
                 dom: 'Pfrtip'
             });
 
-            //// Create the chart with initial data
-            //var container = $('<div/>').insertBefore(table.table().container());
-
-            //var chart = Highcharts.chart(container[0], {
-            //    chart: {
-            //        type: 'pie',
-            //    },
-            //    title: {
-            //        text: 'Staff Count Per Position',
-            //    },
-            //    series: [
-            //        {
-            //            data: chartData(table),
-            //        },
-            //    ],
-            //});
-
-            //// On each draw, update the data in the chart
-            //table.on('draw', function () {
-            //    chart.series[0].setData(chartData(table));
-            //});
         });
-
-        //function chartData(table) {
-        //    var counts = {};
-
-        //    // Count the number of entries for each position
-        //    table
-        //        .column(1, { search: 'applied' })
-        //        .data()
-        //        .each(function (val) {
-        //            if (counts[val]) {
-        //                counts[val] += 1;
-        //            } else {
-        //                counts[val] = 1;
-        //            }
-        //        });
-
-        //    // And map it to the format highcharts uses
-        //    return $.map(counts, function (val, key) {
-        //        return {
-        //            name: key,
-        //            y: val,
-        //        };
-        //    });
-        //}
     </script>
 
-    @*@Scripts.Render("~/bundles/bootstrap")*@
-    @*@RenderSection("scripts", required: false)*@
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>

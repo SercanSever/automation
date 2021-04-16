@@ -138,7 +138,6 @@
     <Compile Include="Controllers\DepartmentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ExpensesController.cs" />
-    <Compile Include="Controllers\GraphicsController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\ProductDetailsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
@@ -2745,7 +2744,6 @@
     <Content Include="Views\Shared\_AdminPartial.cshtml" />
     <Content Include="Views\Employees\EmployeeDetailList.cshtml" />
     <Content Include="Views\Products\Sell.cshtml" />
-    <Content Include="Views\Graphics\Index.cshtml" />
     <Content Include="Views\Expenses\AddExpense.cshtml" />
     <Content Include="Views\Expenses\UpdateExpense.cshtml" />
   </ItemGroup>
