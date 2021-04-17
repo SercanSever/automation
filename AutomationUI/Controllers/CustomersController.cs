@@ -37,6 +37,7 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult AddCustomer(Customer customer)
         {
+            customer.DateOfRegister = DateTime.Now;
             _customerManager.Add(customer);
             return RedirectToAction("Index");
         }

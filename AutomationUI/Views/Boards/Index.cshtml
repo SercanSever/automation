@@ -1,4 +1,8 @@
-﻿@{
+﻿@*@using AutomationUI.Models
+    @model Tuple<List<CustomerListViewModel>, ProductListViewModel>*@
+@using Automation.Entities.Concrete
+@model Tuple<List<Customer>, List<SalesDetail>, List<Product>>
+@{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -98,6 +102,137 @@
                 </div>
                 <!-- ./col -->
             </div>
+
+            <div class="card col-sm-12 shadow">
+                <div class="card-header">
+                    <h3 class="card-title"><strong>Yeni Müşteriler</strong></h3>
+
+                    <div class="card-tools">
+                        <span class="badge badge-danger">Son Eklenen @ViewBag.customerCount Müşteri</span>
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body  p-0">
+                    <ul class="users-list clearfix p-4">
+                        @foreach (var customer in Model.Item1)
+                        {
+                            <li class="shadow mb-sm-4">
+
+                                <a class="users-list-name" href="/Customers/CustomerDetails/@customer.CustomerId"><strong>@customer.CustomerName @customer.CustomerSurname</strong></a>
+                                <span class="users-list-date">@customer.CustomerCity</span>
+                                <span class="users-list-date">@customer.CustomerEmail</span>
+                            </li>
+                        }
+                    </ul>
+                    <!-- /.users-list -->
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer text-center shadow">
+                    <a href="/Customers/Index"><strong>Tüm Müşterileriler</strong></a>
+                </div>
+                <!-- /.card-footer -->
+            </div>
+            <div class="card col-sm-12 shadow">
+                <div class="card-header border-transparent">
+                    <h3 class="card-title"><strong>Son Satılan 10 Ürün</strong></h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0" style="display: block;">
+                    <div class="table-responsive">
+                        <table class="table m-0">
+                            <thead>
+                                <tr>
+                                    <th>Ürün</th>
+                                    <th>Stok Durumu</th>
+                                    <th>Satılan Adet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var sales in Model.Item2)
+                                {
+                                    <tr>
+                                        <td><a href="#">@sales.Product.ProductName</a></td>
+                                        @if (sales.Product.UnitInStock > 5)
+                                        {
+                                            <td><span class="badge badge-success">Stokta Var</span></td>
+                                        }
+                                        else if (sales.Product.UnitInStock <= 5 && sales.Product.UnitInStock > 0)
+                                        {
+                                            <td><span class="badge badge-warning">Stok Az</span></td>
+                                        }
+                                        else
+                                        {
+                                            <td><span class="badge badge-danger">Stokta Yok</span></td>
+                                        }
+
+                                        <td>@sales.SalesDetailQuantity</td>
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.table-responsive -->
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer clearfix shadow" style="display: block;">
+                    <a href="/Products/Index" class="btn btn-sm btn-info float-left">Yeni Satış Yap</a>
+                    <a href="/SalesDetails/Index" class="btn btn-sm btn-secondary float-right">Tüm Satışlar</a>
+                </div>
+                <!-- /.card-footer -->
+            </div>
+            <div class="card col-sm-12">
+                <div class="card-header">
+                    <h3 class="card-title"><strong>Son Eklenen 10 Ürün</strong></h3>
+
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                            <i class="fas fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body p-0 shadow">
+                    <ul class="products-list product-list-in-card pl-2 pr-2">
+                        @foreach (var product in Model.Item3)
+                        {
+                            <li class="item">
+                                <div class="product-img ">
+                                    <img src="@Url.Content(product.ProductImage)" alt="Product Image" class="img-size-50 img-circle">
+                                </div>
+                                <div class="product-info p-2 mt-sm-1">
+                                    <a href="#" class="product-title">
+                                        @product.ProductName
+                                        <span class="badge badge-warning float-right">@product.UnitPrice ₺</span>
+                                    </a>
+                                    @*<span class="product-description">
+                                            Samsung 32" 1080p 60Hz LED Smart HDTV.
+                                            @sales.Product.
+                                        </span>*@
+                                </div>
+                            </li>
+
+                        }
+
+                    </ul>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer text-center shadow">
+                    <a href="/Products/Index" class="uppercase"><strong>Tüm Ürünler</strong></a>
+                </div>
+                <!-- /.card-footer -->
+            </div>
+
+
         </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->

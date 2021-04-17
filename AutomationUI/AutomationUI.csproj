@@ -139,7 +139,6 @@
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\ExpensesController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
-    <Compile Include="Controllers\ProductDetailsController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\SalesDetailsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -2155,6 +2154,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Icons\Cv%27s\SercanSever.jpeg" />
     <Content Include="Icons\greenCircle.png" />
+    <Content Include="Icons\no-image-icon-4.png" />
     <Content Include="Icons\redCircle.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
@@ -2734,7 +2734,6 @@
     <Content Include="Views\Products\WriteProductListToPdf.cshtml" />
     <Content Include="Views\Shared\_DatatableXl.cshtml" />
     <Content Include="Views\Boards\Index.cshtml" />
-    <Content Include="Views\ProductDetails\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="weblogin\fonts\fontawesome-webfont.eot" />
     <Content Include="weblogin\fonts\fontawesome-webfont.ttf" />

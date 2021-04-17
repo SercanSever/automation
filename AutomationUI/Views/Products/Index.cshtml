@@ -13,6 +13,7 @@
     <table id="example" class="trow-border hover order-column shadow">
         <thead>
             <tr>
+                <th></th>
                 <th>Ürün Adı</th>
                 <th>Kategori</th>
                 <th>Marka</th>
@@ -29,18 +30,25 @@
             @foreach (var product in Model.GetProductDetails)
             {
                 <tr>
+                    <td class="text-center">
+                        <img src="@Url.Content(product.ProductImage)" alt="Product Image" class="img-size-50 img-circle" style="width:50px;">
+                    </td>
                     <td class="p-2">@product.ProductName</td>
                     <td class="p-2">@product.CategoryName</td>
                     <td class="p-2">@product.Brand</td>
                     <td class="p-2">@product.UnitPrice ₺</td>
-                    <td class="p-2">@product.UnitInStock Adet</td>
-                    @if (product.UnitInStock <= 5)
+                    <td class="p-2">@product.UnitInStock</td>
+                    @if (product.UnitInStock > 5)
                     {
-                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/redCircle.png" alt="" /></td>
+                        <td class="p-2 text-center"><span class="badge badge-success">Stokta Var</span></td>
+                    }
+                    else if (product.UnitInStock <= 5 && product.UnitInStock > 0)
+                    {
+                        <td class="p-2 text-center"><span class="badge badge-warning">Stok Az</span></td>
                     }
                     else
                     {
-                        <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
+                        <td class="p-2 text-center"><span class="badge badge-danger">Stokta Yok</span></td>
                     }
                     @if (product.UnitInStock == 0 || product.IsActive == false)
                     {
@@ -54,6 +62,7 @@
                             <a id="sell" class="btn btn-outline-danger btn-lg" href="/Products/Sell/@product.ProductId">Satış Yap</a>
                         </td>
                     }
+
 
                     <td class="text-sm-right">
                         <a class="btn btn-success btn-sm text-center mr-4" href="/ProductDetails/Index/@product.ProductId">Detay</a>

@@ -27,6 +27,10 @@ namespace Automation.Business.Concrete
         {
             return _customerDal.GetAll();
         }
+        public List<Customer> GetAllActives()
+        {
+            return _customerDal.GetAll(x => x.IsActive == true);
+        }
 
         public Customer GetById(int id)
         {

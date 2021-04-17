@@ -3,6 +3,7 @@ using Automation.Entities.Concrete;
 using AutomationUI.Models;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -40,6 +41,22 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult AddProduct(Product product)
         {
+            if (Request.Files.Count > 0)
+            {
+                string fileName = $"{Guid.NewGuid()}{Path.GetFileName(Request.Files[0].FileName)}";
+                string extension = Path.GetExtension(Request.Files[0].FileName);
+                string filePath = "~/Images/" + fileName + extension;
+                Request.Files[0].SaveAs(Server.MapPath(filePath));
+                if (extension == "")
+                {
+                    product.ProductImage = "~/Icons/no-image-icon-4.png";
+                }
+                else
+                {
+                    product.ProductImage = filePath;
+                }
+            }
+           
             _productManager.Add(product);
             return RedirectToAction("Index");
         }
@@ -54,9 +71,18 @@ namespace AutomationUI.Controllers
         [HttpGet]
         public ActionResult UpdateProduct(int id)
         {
+            var product = _productManager.GetById(id);
+            if (Request.Files.Count > 0)
+            {
+                string fileName = $"{Guid.NewGuid()}{Path.GetFileName(Request.Files[0].FileName)}";
+                string extension = Path.GetExtension(Request.Files[0].FileName);
+                string filePath = "~/Images/" + fileName + extension;
+                Request.Files[0].SaveAs(Server.MapPath(filePath));
+                product.ProductImage = filePath;
+            }
             var listItems = new CategoryListViewModel().GetCategoriesListItems();
             ViewBag.listItems = listItems;
-            var product = _productManager.GetById(id);
+
             return View("UpdateProduct", product);
         }
         [HttpPost]
