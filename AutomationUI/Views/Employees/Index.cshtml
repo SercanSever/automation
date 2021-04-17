@@ -22,7 +22,6 @@
                 <th></th>
                 <th></th>
                 <th></th>
-                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -40,11 +39,9 @@
                     {
                         <td class="p-2 text-center"><img style="width:23px" src="~/Icons/greenCircle.png" alt="" /></td>
                     }
-                    <td class="text-sm-right">
-                        <a class="btn btn-success btn-sm text-sm-right" href="/Departments/DepartmentEmployeeSales/@employee.EmployeeId">Satışlar</a>
-                    </td>
 
                     <td class="text-sm-right">
+                        <a class="btn btn-success btn-sm text-sm-right" href="/Departments/DepartmentEmployeeSales/@employee.EmployeeId">Satışlar</a>
                         <a class="btn btn-warning btn-sm mr-sm-2" href="/Employees/UpdateEmployee/@employee.EmployeeId">Güncelle</a>
                     </td>
                     @if (employee.IsActive)

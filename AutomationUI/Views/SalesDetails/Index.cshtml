@@ -74,8 +74,7 @@
                 <th>Tarih</th>
                 <th>Adet</th>
                 <th>Fiyat</th>
-                <th>Toplam</th>
-                <th></th>
+                <th>Toplam</th>       
                 <th></th>
             </tr>
         </thead>
@@ -89,10 +88,9 @@
                     <td class="p-2">@salesDetail.SalesDetailQuantity</td>
                     <td class="p-2">@salesDetail.SalesDetailPrice</td>
                     <td class="p-2">@salesDetail.SalesDetailTotal</td>
-                    <td class="text-sm-right">
-                        <a class="btn btn-success btn-sm text-sm-right" href="/Departments/DepartmentEmployeeSales/@salesDetail.SalesDetailId">Detay</a>
-                    </td>
+                 
                     <td class="text-sm-center">
+                        <a class="btn btn-success btn-sm text-sm-right" href="/Departments/DepartmentEmployeeSales/@salesDetail.SalesDetailId">Detay</a>
                         <a class="btn btn-warning btn-sm mr-sm-2" href="/SalesDetails/UpdateSalesDetail/@salesDetail.SalesDetailId">Güncelle</a>
                     </td>
                 </tr>

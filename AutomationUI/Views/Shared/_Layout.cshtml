@@ -33,7 +33,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                    <a class="dropdown-item" href="#">Ayarlar</a><a class="dropdown-item" href="#">Hesap</a>
+                    <a class="dropdown-item" href="#">Hesap</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="login.html">Çıkış Yap</a>
                 </div>
@@ -57,41 +57,20 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-th"></i></div>
                             Ürünler
                         </a>
-                        <a class="nav-link" href="/Departments/Index">
-                            <div class="sb-nav-link-icon"><i class="fas fa-list-alt"></i></div>
-                            Departmanlar
-                        </a>
                         <a class="nav-link" href="/Customers/Index">
                             <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
                             Müşteriler
+                        </a>
+                        <a class="nav-link" href="/Departments/Index">
+                            <div class="sb-nav-link-icon"><i class="fas fa-list-alt"></i></div>
+                            Departmanlar
                         </a>
                         <a class="nav-link" href="/Employees/Index">
                             <div class="sb-nav-link-icon"><i class="fas fa-people-carry"></i></div>
                             Personeller
                         </a>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
-                            <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
-                            Admin
-                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                        </a>
-                        <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
-                                    Yetkiler
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="login.html">Giriş Yap</a><a class="nav-link" href="register.html">Kayıt</a><a class="nav-link" href="password.html">Şifremi Unuttum</a></nav>
-                                </div>
-                                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
-                                    Sistem Hataları
-                                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
-                                </a>
-                                <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
-                                    <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="401.html">401 Page</a><a class="nav-link" href="404.html">404 Page</a><a class="nav-link" href="500.html">500 Page</a></nav>
-                                </div>
-                            </nav>
-                        </div>
+
+
                         <div class="sb-sidenav-menu-heading">Rapor / Fatura</div>
                         <a class="nav-link" href="/SalesDetails/Index">
                             <div class="sb-nav-link-icon"><i class="fas fa-list-alt"></i></div>
@@ -100,9 +79,35 @@
                         <a class="nav-link" href="/Expenses/Index">
                             <div class="sb-nav-link-icon"><i class="fas fa-sticky-note"></i></div>
                             Giderler
-                        </a>             
+                        </a>
+                        @*<a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user"></i></div>
+                                Admin
+                                <div class="sb-sidenav-collapse-arrow">
+                                    <i class="fas fa-angle-down"></i>
+                                </div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Yetkiler
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="login.html">Giriş Yap</a><a class="nav-link" href="register.html">Kayıt</a><a class="nav-link" href="password.html">Şifremi Unuttum</a></nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Sistem Hataları
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav"><a class="nav-link" href="401.html">401 Page</a><a class="nav-link" href="404.html">404 Page</a><a class="nav-link" href="500.html">500 Page</a></nav>
+                                    </div>
+                                </nav>
+                            </div>*@
                     </div>
                 </div>
+
                 <div class="sb-sidenav-footer">
                     <div class="small">Logged in as:</div>
                     Sercan Sever
