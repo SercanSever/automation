@@ -2152,7 +2152,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Icons\Cv%27s\SercanSever.jpeg" />
     <Content Include="Icons\greenCircle.png" />
     <Content Include="Icons\no-image-icon-4.png" />
     <Content Include="Icons\redCircle.png" />
