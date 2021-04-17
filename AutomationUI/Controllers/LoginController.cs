@@ -9,6 +9,7 @@ using System.Web.Security;
 
 namespace AutomationUI.Controllers
 {
+    [AllowAnonymous]
     public class LoginController : Controller
     {
         IAdminManager _adminManager;
@@ -48,6 +49,11 @@ namespace AutomationUI.Controllers
             {
                 return RedirectToAction("Index", "Login");
             }
+        }
+        public ActionResult LogOut()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index");
         }
 
     }

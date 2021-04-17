@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace AutomationUI.Controllers
 {
+
     public class BoardsController : Controller
     {
 
@@ -28,7 +29,7 @@ namespace AutomationUI.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-
+            ViewBag.adminName = Session["AdminName"];
             var customermodel = new CustomerListViewModel
             {
                 Customers = _customerManager.GetAllActives()

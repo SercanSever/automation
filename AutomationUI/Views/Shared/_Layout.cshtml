@@ -35,7 +35,7 @@
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                     <a class="dropdown-item" href="#">Hesap</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="login.html">Çıkış Yap</a>
+                    @Html.ActionLink("Çıkış Yap","LogOut","Login",new object { },new { @class= "dropdown-item"})
                 </div>
             </li>
         </ul>
@@ -109,8 +109,8 @@
                 </div>
 
                 <div class="sb-sidenav-footer">
-                    <div class="small">Logged in as:</div>
-                    Sercan Sever
+                    <div class="small">Kullanıcı:</div>
+                    @Session["AdminName"]
                 </div>
             </nav>
         </div>
