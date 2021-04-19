@@ -27,6 +27,10 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult AddAdmin(Admin admin)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("Index");
+            }
             _adminManager.Add(admin);
             return RedirectToAction("Index");
         }
@@ -38,6 +42,10 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult AdminLogin(Admin admin)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("AdminLogin");
+            }
             var model = _adminManager.GetByNameAndPassword(admin);
             if (model.AdminName == admin.AdminName && model.AdminPassword == admin.AdminPassword)
             {

@@ -41,6 +41,12 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult AddProduct(Product product)
         {
+            var listItems = new CategoryListViewModel().GetCategoriesListItems();
+            ViewBag.listItems = listItems;
+            if (!ModelState.IsValid)
+            {
+                return View("AddProduct");
+            }
             if (Request.Files.Count > 0)
             {
                 string fileName = $"{Guid.NewGuid()}{Path.GetFileName(Request.Files[0].FileName)}";
@@ -88,6 +94,12 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult UpdateProduct(Product product)
         {
+            var listItems = new CategoryListViewModel().GetCategoriesListItems();
+            ViewBag.listItems = listItems;
+            if (!ModelState.IsValid)
+            {
+                return View("UpdateProduct");
+            }
             _productManager.Update(product);
             return RedirectToAction("Index");
         }

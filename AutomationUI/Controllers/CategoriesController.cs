@@ -34,6 +34,10 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult AddCategory(Category category)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("AddCategory");
+            }
             _categoryManager.Add(category);
             return RedirectToAction("Index");
         }
@@ -54,6 +58,10 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult UpdateCategory(Category category)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("UpdateCategory");
+            }
             _categoryManager.Update(category);
             return RedirectToAction("Index");
         }

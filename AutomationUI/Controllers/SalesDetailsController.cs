@@ -43,6 +43,18 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult AddSalesDetail(SalesDetail salesDetail)
         {
+            var brandListItems = new ProductListViewModel().GetBrandListItems();
+            ViewBag.brandListItems = brandListItems;
+            var productListItems = new ProductListViewModel().GetProductNameListItems();
+            ViewBag.productListItems = productListItems;
+            var customerListItems = new CustomerListViewModel().GetCustomerListItems();
+            ViewBag.customerListItems = customerListItems;
+            var employeeListItems = new EmployeeListViewModel().GetEmployeeListItems();
+            ViewBag.employeeListItems = employeeListItems;
+            if (!ModelState.IsValid)
+            {
+                return View("AddSalesDetail");
+            }
             _salesDetailManager.Add(salesDetail);
             return RedirectToAction("Index");
         }
@@ -56,10 +68,6 @@ namespace AutomationUI.Controllers
         [HttpGet]
         public ActionResult UpdateSalesDetail(int id)
         {
-            //var productListItems = new ProductListViewModel().GetProductNameListItems();
-            //ViewBag.productListItems = productListItems;
-            //var brandListItems = new ProductListViewModel().GetBrandListItems();
-            //ViewBag.brandListItems = brandListItems;
             var customerListItems = new CustomerListViewModel().GetCustomerListItems();
             ViewBag.customerListItems = customerListItems;
             var employeeListItems = new EmployeeListViewModel().GetEmployeeListItems();
@@ -70,6 +78,14 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult UpdateSalesDetail(SalesDetail salesDetail)
         {
+            var customerListItems = new CustomerListViewModel().GetCustomerListItems();
+            ViewBag.customerListItems = customerListItems;
+            var employeeListItems = new EmployeeListViewModel().GetEmployeeListItems();
+            ViewBag.employeeListItems = employeeListItems;
+            if (!ModelState.IsValid)
+            {
+                return View("UpdateSalesDetail");
+            }
             _salesDetailManager.Update(salesDetail);
             return RedirectToAction("Index");
         }

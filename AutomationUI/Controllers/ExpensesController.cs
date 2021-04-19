@@ -35,6 +35,10 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult AddExpense(Expense expense)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("AddExpense");
+            }
             expense.ExpenseDate = DateTime.Now;
             _expenseManager.Add(expense);
             return RedirectToAction("AddExpense");
@@ -48,6 +52,10 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult UpdateExpense(Expense expense)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("UpdateExpense");
+            }
             expense.ExpenseDate = DateTime.Now;
             _expenseManager.Update(expense);
             return RedirectToAction("Index");

@@ -37,6 +37,10 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult AddCustomer(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("AddCustomer");
+            }
             customer.DateOfRegister = DateTime.Now;
             _customerManager.Add(customer);
             return RedirectToAction("Index");
@@ -58,6 +62,10 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult UpdateCustomer(Customer customer)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("UpdateCustomer");
+            }
             customer.DateOfRegister = DateTime.Now;
             _customerManager.Update(customer);
             return RedirectToAction("Index");

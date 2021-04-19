@@ -39,6 +39,10 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult AddDepartment(Department department)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("AddDepartment");
+            }
             _departmentManager.Add(department);
             return RedirectToAction("Index");
         }
@@ -53,14 +57,16 @@ namespace AutomationUI.Controllers
         [HttpGet]
         public ActionResult UpdateDepartment(int id)
         {
-            //var listItems = _departmentManager.GetCategoriesListItems();
-            //ViewBag.listItems = _departmentManager;
             var department = _departmentManager.GetById(id);
             return View("UpdateDepartment", department);
         }
         [HttpPost]
         public ActionResult UpdateDepartment(Department department)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("UpdateDepartment");
+            }
             _departmentManager.Update(department);
             return RedirectToAction("Index");
         }

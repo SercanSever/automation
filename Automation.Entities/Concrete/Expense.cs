@@ -13,6 +13,8 @@ namespace Automation.Entities.Concrete
         public int ExpenseId { get; set; }
         [Column(TypeName = "NVarChar")]
         [StringLength(300)]
+        [Required(ErrorMessage = "Açıklama boş bırakılamaz.")]
+        [MaxLength(50, ErrorMessage = "Açıklama 300 Karakteri Geçemez")]
         public string ExpenseDescription { get; set; }
         public DateTime ExpenseDate { get; set; }
         public decimal ExpenseTotal { get; set; }

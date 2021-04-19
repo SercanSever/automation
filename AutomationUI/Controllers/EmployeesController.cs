@@ -40,6 +40,14 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult AddEmployee(Employee employee)
         {
+            var departmentList = new DepartmentListViewModel().GetDepartmentsListItems();
+            ViewBag.departmentList = departmentList;
+            var roleList = new EmployeeListViewModel().GetRoles();
+            ViewBag.roleList = roleList;
+            if (!ModelState.IsValid)
+            {
+                return View("AddEmployee");
+            }
             if (Request.Files.Count > 0)
             {
                 string fileName = $"{Guid.NewGuid()}{Path.GetFileName(Request.Files[0].FileName)}";
@@ -72,6 +80,14 @@ namespace AutomationUI.Controllers
         [HttpPost]
         public ActionResult UpdateEmployee(Employee employee)
         {
+            var departmentList = new DepartmentListViewModel().GetDepartmentsListItems();
+            ViewBag.departmentList = departmentList;
+            var roleList = new EmployeeListViewModel().GetRoles();
+            ViewBag.roleList = roleList;
+            if (!ModelState.IsValid)
+            {
+                return View("UpdateEmployee");
+            }
             if (Request.Files.Count > 0)
             {
                 string fileName = $"{Guid.NewGuid()}{Path.GetFileName(Request.Files[0].FileName)}";

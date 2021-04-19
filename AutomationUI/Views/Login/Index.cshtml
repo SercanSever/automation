@@ -100,12 +100,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <p>Kayıt Sayfası</p>
                     <div class="clear"></div>
                     <div class="login-agileits-top">
+                        @Html.ValidationSummary(false, "", new { @style = "color:red" })
                         @using (Html.BeginForm("AddAdmin", "Login", FormMethod.Post))
                         {
                             @Html.TextBoxFor(x => x.AdminName, new { @class = "name", @placeholder = "Kullanıcı adı", @type = "text" })
                             @Html.TextBoxFor(x => x.AdminPassword, new { @class = "name", @placeholder = "Şifre", @type = "password" })
-                            @*<input type="text" class="name" name="AdminName" Placeholder="Kullanıcı adı" required="" />*@
-                            @*<input type="password" class="email" name="AdminPassword" Placeholder="Şifre" required="" />*@
                             <input type="submit" value="Kayıt Ol" />
                         }
                     </div>
@@ -120,6 +119,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div id="small-dialog2" class="mfp-hide book-form">
             <div class="login-form login-form-left">
                 <div class="agile-row">
+                    @Html.ValidationSummary(false, "", new { @style = "color:red" })
                     @using (Html.BeginForm("AdminLogin", "Login", FormMethod.Post))
                     {
                         <h3>Admin / Giriş</h3>

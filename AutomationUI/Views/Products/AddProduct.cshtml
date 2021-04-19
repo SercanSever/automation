@@ -7,51 +7,51 @@
 
 @using (Html.BeginForm("AddProduct", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    <div class="container-fluid">
-        <ol class="breadcrumb shadow">
-            <li class="breadcrumb-item lead"><strong>Ürün Ekle</strong></li>
-        </ol>
-        <div class="row p-2 shadow">
-            <form class="col-sm-4">
-                <div class="form-group col-sm-5">
-                    @Html.Label("Ürün Adı : ")
-                    @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
-                    <small id="productNameValidation" class="form-text text-muted">Ürün adı 50 karakteri geçemez.</small>
-                </div>
-                <div class="form-group col-sm-5">
-                    @Html.Label("Kategori : ")
-                    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.listItems, new { @class = "form-control" })
-                </div>
-                <div class="form-group col-sm-5">
-                    @Html.Label("Marka : ")
-                    @Html.TextBoxFor(x => x.Brand, new { @class = "form-control" })
-                </div>
-                <div class="form-group col-sm-5">
-                    @Html.Label("Fiyat : ")
-                    @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control", @placeholder = "₺" })
-                </div>
-                <div class="form-group col-sm-5">
-                    @Html.Label("Stok Miktarı : ")
-                    @Html.TextBoxFor(x => x.UnitInStock, new { @class = "form-control" })
-                </div>
-                <div class="form-group col-sm-5">
-                    @Html.Label("Ürün Fotoğrafı : ")
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                        </div>
-                        <div class="custom-file">
-                            <input type="file" class="custom-file-input" name="employeeImage" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                            <label class="custom-file-label" for="inputGroupFile01">Fotoğraf Seçiniz..</label>
-                        </div>
+<div class="container-fluid">
+    <ol class="breadcrumb shadow">
+        <li class="breadcrumb-item lead"><strong>Ürün Ekle</strong></li>
+    </ol>
+    @Html.ValidationSummary(false, "", new { @style = "color:red" })
+    <div class="row p-2 shadow">
+        <form class="col-sm-4">
+            <div class="form-group col-sm-5">
+                @Html.Label("Ürün Adı : ")
+                @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+            </div>
+            <div class="form-group col-sm-5">
+                @Html.Label("Kategori : ")
+                @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.listItems, new { @class = "form-control" })
+            </div>
+            <div class="form-group col-sm-5">
+                @Html.Label("Marka : ")
+                @Html.TextBoxFor(x => x.Brand, new { @class = "form-control" })
+            </div>
+            <div class="form-group col-sm-5">
+                @Html.Label("Fiyat : ")
+                @Html.TextBoxFor(x => x.UnitPrice, new { @class = "form-control", @placeholder = "₺" })
+            </div>
+            <div class="form-group col-sm-5">
+                @Html.Label("Stok Miktarı : ")
+                @Html.TextBoxFor(x => x.UnitInStock, new { @class = "form-control" })
+            </div>
+            <div class="form-group col-sm-5">
+                @Html.Label("Ürün Fotoğrafı : ")
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
                     </div>
-                    <hr />
-                    <button type="submit" class="btn btn-primary col-sm-3 offset-4">Kaydet</button>
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" name="employeeImage" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                        <label class="custom-file-label" for="inputGroupFile01">Fotoğraf Seçiniz..</label>
+                    </div>
                 </div>
-          
-            </form>
-        </div>
+                <hr />
+                <button type="submit" class="btn btn-primary col-sm-3 offset-4">Kaydet</button>
+            </div>
+
+        </form>
     </div>
+</div>
 }
 
 

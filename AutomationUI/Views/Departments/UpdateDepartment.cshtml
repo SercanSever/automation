@@ -8,22 +8,23 @@
 
 @using (Html.BeginForm("UpdateDepartment", "Departments", FormMethod.Post))
 {
-    <div class="container-fluid">
-        <ol class="breadcrumb shadow">
-            <li class="breadcrumb-item lead"><strong>Departman Güncelle</strong></li>
-        </ol>
-        @Html.HiddenFor(x => x.DepartmentId)
-        <div class="row p-2 shadow ">
-            <div class="col-sm-4">
-                <div class="form-group">
-                    @Html.Label("Departman Adı : ")
-                    @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
-                    <small id="categoryNameValidation" class="form-text text-muted">Departman adı 50 karakteri geçemez.</small>
-                </div>
-                <button type="submit" class="btn btn-primary">Güncelle</button>
+<div class="container-fluid">
+    <ol class="breadcrumb shadow">
+        <li class="breadcrumb-item lead"><strong>Departman Güncelle</strong></li>
+    </ol>
+    @Html.ValidationSummary(false, "", new { @style = "color:red" })
+    @Html.HiddenFor(x => x.DepartmentId)
+    <div class="row p-2 shadow ">
+        <div class="col-sm-4">
+            <div class="form-group">
+                @Html.Label("Departman Adı : ")
+                @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
+                <small id="categoryNameValidation" class="form-text text-muted">Departman adı 50 karakteri geçemez.</small>
             </div>
+            <button type="submit" class="btn btn-primary">Güncelle</button>
         </div>
     </div>
+</div>
 }
 
 

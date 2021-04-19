@@ -11,6 +11,8 @@ namespace Automation.Entities.Concrete
         public int DepartmentId { get; set; }
         [Column(TypeName = "NVarChar")]
         [StringLength(50)]
+        [Required(ErrorMessage = "Departman adı boş bırakılamaz.")]
+        [MaxLength(50, ErrorMessage = "Departman Adı 50 Karakteri Geçemez")]
         public string DepartmentName { get; set; }
         public bool IsActive { get; set; }
         public ICollection<Employee> Employees { get; set; }

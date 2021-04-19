@@ -2,12 +2,8 @@
 using Automation.DataAccess.Abstract;
 using Automation.Entities.Concrete;
 using Automation.Entities.Dto;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.Mvc;
+
 
 namespace Automation.Business.Concrete
 {
@@ -44,7 +40,7 @@ namespace Automation.Business.Concrete
         public ProductDetailDto GetProductDetailsById(int id)
         {
             return _productDal.GetProductDetailById(x => x.ProductId == id);
-        }     
+        }
 
         public void Update(Product product)
         {
