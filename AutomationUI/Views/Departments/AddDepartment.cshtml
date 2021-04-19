@@ -15,8 +15,7 @@
         <form class="col-sm-4" method="post">
             <div class="form-group">
                 @Html.Label("Departman Adı : ")
-                @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control", @placeholder = "" })
-                <small id="departmentNameValidation" class="form-text text-muted">Departman adı 50 karakteri geçemez.</small>
+                @Html.TextBoxFor(x => x.DepartmentName, new { @class = "form-control", @placeholder = "" })      
             </div>
             <button type="submit" class="btn btn-primary">Kaydet</button>
         </form>
