@@ -8,59 +8,59 @@
 
 @using (Html.BeginForm("UpdateEmployee", "Employees", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-<div class="container-fluid">
-    <ol class="breadcrumb shadow">
-        <li class="breadcrumb-item lead"><strong>Departman Güncelle</strong></li>
-    </ol>
-    @Html.ValidationSummary(false, "", new { @style = "color:red" })
-    @Html.HiddenFor(x => x.EmployeeId)
-    <div class="row p-2 shadow ">
-        <div class="col-sm-4">
-            <div class="form-group">
-                @Html.Label("Adı : ")
-                @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
-            </div>
-            <div class="form-group">
-                @Html.Label("Soyadı : ")
-                @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
-            </div>
-            <div class="form-group">
-                @Html.Label("Adres : ")
-                @Html.TextAreaFor(x => x.EmployeeAdress, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
-            </div>
-            <div class="form-group">
-                @Html.Label("Telefon : ")
-                @Html.TextBoxFor(x => x.EmployeePhone, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
-            </div>
-            <div class="form-group">
-                @Html.Label("Email : ")
-                @Html.TextBoxFor(x => x.EmployeeEmail, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
-            </div>
-            <div class="form-group">
-                @Html.Label("Departman : ")
-                @Html.DropDownListFor(x => x.DepartmentId, (List<SelectListItem>)ViewBag.departmentList, new { @class = "form-control" })
-            </div>
-            <div class="form-group">
-                @Html.Label("Yetki : ")
-                @Html.DropDownListFor(x => x.RoleId, (List<SelectListItem>)ViewBag.departmentList, new { @class = "form-control" })
-            </div>
-            <div class="form-group">
-                @Html.Label("Personel Fotoğrafı : ")
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                    </div>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" name="employeeImage" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                        <label class="custom-file-label" for="inputGroupFile01">Fotoğraf Seçiniz..</label>
-                    </div>
+    <div class="container-fluid">
+        <ol class="breadcrumb shadow">
+            <li class="breadcrumb-item lead"><strong>Departman Güncelle</strong></li>
+        </ol>
+        @Html.ValidationSummary(false, "", new { @style = "color:red" })
+        @Html.HiddenFor(x => x.EmployeeId)
+        <div class="row p-2 shadow ">
+            <div class="col-sm-4">
+                <div class="form-group">
+                    @Html.Label("Adı : ")
+                    @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
                 </div>
-                <hr />
-                <button type="submit" class="btn btn-primary col-sm-3 offset-4">Kaydet</button>
+                <div class="form-group">
+                    @Html.Label("Soyadı : ")
+                    @Html.TextBoxFor(x => x.EmployeeSurname, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Adres : ")
+                    @Html.TextAreaFor(x => x.EmployeeAdress, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Telefon : ")
+                    @Html.TextBoxFor(x => x.EmployeePhone, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Email : ")
+                    @Html.TextBoxFor(x => x.EmployeeEmail, new { @class = "form-control", @placeholder = "Giyim, Spor.." })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Departman : ")
+                    @Html.DropDownListFor(x => x.DepartmentId, (List<SelectListItem>)ViewBag.departmentList, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Yetki : ")
+                    @Html.DropDownListFor(x => x.RoleId, (List<SelectListItem>)ViewBag.departmentList, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.Label("Personel Fotoğrafı : ")
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                        </div>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" name="employeeImage" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+                            <label class="custom-file-label" for="inputGroupFile01">Fotoğraf Seçiniz..</label>
+                        </div>
+                    </div>
+                    <hr />
+                    <button type="submit" class="btn btn-primary col-sm-3 offset-4">Kaydet</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
 }
 
 

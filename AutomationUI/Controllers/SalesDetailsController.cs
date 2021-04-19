@@ -16,6 +16,7 @@ namespace AutomationUI.Controllers
         public SalesDetailsController(ISalesDetailManager salesDetailManager)
         {
             _salesDetailManager = salesDetailManager;
+
         }
 
         [HttpGet]

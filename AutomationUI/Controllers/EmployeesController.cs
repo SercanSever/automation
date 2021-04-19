@@ -54,7 +54,15 @@ namespace AutomationUI.Controllers
                 string extension = Path.GetExtension(Request.Files[0].FileName);
                 string filePath = "~/Images/" + fileName + extension;
                 Request.Files[0].SaveAs(Server.MapPath(filePath));
-                employee.EmployeeImage = filePath;
+                if (extension == "")
+                {
+                    employee.EmployeeImage = "~/Icons/no-image-icon-4.png";
+                }
+                else
+                {
+                    employee.EmployeeImage = filePath;
+                }
+         
             }
             _employeeManager.Add(employee);
             return RedirectToAction("Index");
@@ -94,7 +102,15 @@ namespace AutomationUI.Controllers
                 string extension = Path.GetExtension(Request.Files[0].FileName);
                 string filePath = "~/Images/" + fileName + extension;
                 Request.Files[0].SaveAs(Server.MapPath(filePath));
-                employee.EmployeeImage = filePath;
+                if (extension == "")
+                {
+                    employee.EmployeeImage = "~/Icons/no-image-icon-4.png";
+                }
+                else
+                {
+                    employee.EmployeeImage = filePath;
+                }
+           
             }
             _employeeManager.Update(employee);
             return RedirectToAction("Index");
